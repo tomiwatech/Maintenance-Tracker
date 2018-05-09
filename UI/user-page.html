@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+    <meta name="keywords" content="web design, affordable web design, professional web design">
+    <meta name="author" content="Sanni Michael Tomiwa">
+    <title>Maintenance Tracker | About</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Maintenance</span> Tracker</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Signup</a></li>
+                    <li><a href="user-page.html">User</a></li>
+                    <li><a href="admin-page.html">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <aside id="left-sidebar">
+        <div class="dark">
+            <h3 id="quoteTitle">Make A request</h3>
+            <div class="quote">
+                <div>
+                    <label>Equipment</label><br>
+                    <input type="text" placeholder="equipment">
+                </div>
+                <div>
+                    <label>Equipment Model</label><br>
+                    <input type="text" placeholder="model">
+                </div>
+                <div>
+                    <label>Request Description</label><br>
+                    <textarea placeholder="Message"></textarea>
+                </div>
+                <button class="buttonSubmit">Submit Request</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside id="right-sidebar">
+        <div class="dark-user">
+            <h3 id="quoteTitle">View All Request</h3>
+            <button id="toggleButton" type="button">Toggle Request</button>
+            <div id="display">
+                <hr>
+                <div class="view-request">
+                    <h2>Device Flash light malfunctioning</h2>
+                    <div class="request-template" id="temp">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ducimus, quidem perferendis accusamus vel quasi nihil recusandae. Maxime, velit optio! Sed quos temporibus soluta beatae earum laudantium est animi nihil aut quaerat?
+                            Atque nostrum nulla vitae, cum laboriosam suscipit dolorum.</p>
+                    </div>
+                    <button class="viewSubmit" id="toggleTemplate">Toggle Request</button>
+                </div>
+                <hr>
+                <div class="view-request">
+                    <h2>Blue Screen of death on my HP Windows 10</h2>
+                    <div class="request-template" id="temp2">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ducimus, quidem perferendis accusamus vel quasi nihil recusandae. Maxime, velit optio! Sed quos temporibus soluta beatae earum laudantium est animi nihil aut quaerat?
+                            Atque nostrum nulla vitae, cum laboriosam suscipit dolorum.</p>
+                    </div>
+                    <button class="viewSubmit" id="toggleTemplate2">Toggle Request</button>
+                </div>
+                <hr>
+                <div class="view-request">
+                    <h2> Cant Access my data on the server </h2>
+                    <div class="request-template" id="temp3">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ducimus, quidem perferendis accusamus vel quasi nihil recusandae. Maxime, velit optio! Sed quos temporibus soluta beatae earum laudantium est animi nihil aut quaerat?
+                            Atque nostrum nulla vitae, cum laboriosam suscipit dolorum.</p>
+                    </div>
+                    <button class="viewSubmit" id="toggleTemplate3" type="submit">Toggle Request</button>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </aside>
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter Email...">
+                <button class="button_1">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Maintenance Tracker, Copyright &copy; 2018</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
