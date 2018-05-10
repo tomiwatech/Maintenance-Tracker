@@ -21,13 +21,13 @@
         margin-top: 40px;
     }
     #newsletter button,
-    .quote button {
+    .userform button {
         display: block;
         width: 100%;
     }
     #newsletter form input[type="email"],
-    .quote input,
-    .quote textarea {
+    .userform input,
+    .userform textarea {
         width: 100%;
         margin-bottom: 5px;
     }
@@ -40,7 +40,7 @@
         width: 230px;
     }
 
-    .quote{
+    .userform{
         width: 100%;
     }
 
@@ -86,11 +86,10 @@
         padding-left: 117px;
     }
 
-    .quote input, textarea {
+    .userform input, textarea {
         width: 70%;
         padding: 13px 25px;
         margin: 8px 120px;
-        /* margin: 0 auto; */
         display: inline-block;
         border: 1px solid#878b87;
         border-radius: 4px;
