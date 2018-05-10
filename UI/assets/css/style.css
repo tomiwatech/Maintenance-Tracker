@@ -274,7 +274,7 @@ aside > #admin-sidebar, #login-sidebar, #signup-sidebar{
     margin: 0 auto;
 }
 
-.quote {
+.userform {
     width: 50%;
     margin: 0 auto;
 }
@@ -283,7 +283,7 @@ aside > #admin-sidebar, #login-sidebar, #signup-sidebar{
     text-align: center
 }
 
-.quote input,
+.userform input,
 textarea{
     width: 100%;
     padding: 12px 20px;
