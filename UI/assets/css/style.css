@@ -20,7 +20,7 @@ body {
 }
 
 .container>h1#title {
-    padding-top: 150px
+    padding-top: 100px
 }
 
 ul {
@@ -42,9 +42,28 @@ ul {
     background: #e8491d;
     color: #ffffff;
     padding: 14px 40px;
-    border-radius: 10px;
     font-size: 18px;
     margin-top: 20px;
+    border: 2px solid #e8491d;
+}
+
+.landingBtn {
+    width: 30%;
+    background: #e8491d;
+    color: #ffffff;
+    padding: 14px 40px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: 2px solid #e8491d;
+}
+
+.landingBtn:hover{
+    border-color: #35424a;
+    background: #35424a;
+    color: #ffffff;
+    border: 2px solid #35424a;
+    cursor: pointer;
 }
 
 .viewSubmit {
@@ -70,8 +89,10 @@ ul {
     left: 50%;
 }
 
-.view-request>button {
-    /* float: right; */
+#admin-details {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
 }
 
 .dark {
@@ -90,6 +111,15 @@ ul {
     margin-top:0px;
     margin-bottom: 0px;
     height: 500px;
+}
+
+.dark-admin-details {
+    padding: 15px;
+    background: #35424a;
+    color: #ffffff;
+    margin-top:0px;
+    margin-bottom: 0px;
+    height: 800px;
 }
 
 .dark-user {
@@ -156,6 +186,7 @@ header .current a {
 header a:hover {
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 
@@ -226,8 +257,7 @@ header a:hover {
 /* Sidebar */
 
 aside#left-sidebar {
-    width: 50%;
-    float: left;
+    width: 100%;
 }
 
 aside#right-sidebar {
@@ -244,15 +274,7 @@ aside > #admin-sidebar, #login-sidebar, #signup-sidebar{
     margin: 0 auto;
 }
 
-
-/* aside#sidebar .quote input,
-aside#sidebar .quote textarea {
-    width: 50%;
-    padding: 5px;
-    margin: 0 auto;
-} */
-
-.quote {
+.userform {
     width: 50%;
     margin: 0 auto;
 }
@@ -261,8 +283,8 @@ aside#sidebar .quote textarea {
     text-align: center
 }
 
-.quote input,
-textarea {
+.userform input,
+textarea{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -310,10 +332,24 @@ table {
 th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #e8491d;
+    border-bottom: 2px solid #e8491d;
 }
 
-tr:hover {background-color:#e8491d;}
+tr:hover {background-color:#e8491d;cursor: pointer;}
+
+.eye-icon i{
+    text-decoration: none;
+    background: white;
+    padding: 4px;
+    margin-left: 10px;
+}
+
+
+.eye-icon a:hover{
+    text-decoration: none;
+    background:#e8491d;
+    cursor: pointer;
+}
 
 .button {
     background-color: #4CAF50; /* Green */
@@ -330,6 +366,7 @@ tr:hover {background-color:#e8491d;}
 .button:hover{
     background:#e8491d;
     color:white;
+    cursor: pointer;
 }
 
 .button2 {background-color: #f44336;}
@@ -337,37 +374,10 @@ tr:hover {background-color:#e8491d;}
 .button3 {background-color: darkorange;}
 
 
-
-/* Media Queries */
-
-@media(max-width: 768px) {
-    header #branding,
-    header nav,
-    header nav li,
-    #newsletter h1,
-    #newsletter form,
-    #boxes .box,
-    article#main-col,
-    aside#sidebar {
-        float: none;
-        text-align: center;
-        width: 100%;
-    }
-    header {
-        padding-bottom: 20px;
-    }
-    #showcase h1 {
-        margin-top: 40px;
-    }
-    #newsletter button,
-    .quote button {
-        display: block;
-        width: 100%;
-    }
-    #newsletter form input[type="email"],
-    .quote input,
-    .quote textarea {
-        width: 100%;
-        margin-bottom: 5px;
-    }
+.form-labels{
+    padding-left: 0px;
 }
+
+
+
+

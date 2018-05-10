@@ -1,0 +1,111 @@
+
+/* Media Queries */
+
+@media(max-width: 768px) {
+    header #branding,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    header {
+        padding-bottom: 20px;
+    }
+    #showcase h1 {
+        margin-top: 40px;
+    }
+    #newsletter button,
+    .quote button {
+        display: block;
+        width: 100%;
+    }
+    #newsletter form input[type="email"],
+    .quote input,
+    .quote textarea {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .landingBtn {
+        text-align: center;
+        width: 230px;
+    }
+
+    .quote{
+        width: 100%;
+    }
+
+    .dark-admin-details{
+        height: 3000px
+    }
+
+    .eye-icon i{
+        margin-left: 10px;
+    }
+
+}
+
+
+@media only screen and (max-width: 347px) {
+    .eye-icon i{
+        margin-left: 0px;
+        padding: 0px;
+    }
+}
+
+
+@media only screen and (min-width: 760px) and (max-width: 900px) {
+
+    .dark-admin-details{
+        height: 1200px
+    }
+
+    #newsletter .newsletter-form {
+        width: 45%;
+        margin: 0 auto;
+        float: none;
+    }
+}
+
+
+@media only screen and (min-width:1024px) and (max-width:1366px){
+    .dark-admin-details {
+        height: 920px;
+    }
+
+    .form-labels{
+        padding-left: 117px;
+    }
+
+    .quote input, textarea {
+        width: 70%;
+        padding: 13px 25px;
+        margin: 8px 120px;
+        /* margin: 0 auto; */
+        display: inline-block;
+        border: 1px solid#878b87;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+
+    .buttonSubmit {
+        width: 45%;
+        background: #e8491d;
+        color: #ffffff;
+        padding: 14px 40px;
+        border-radius: 10px;
+        font-size: 18px;
+        margin: 20px 200px;
+        margin-top: 20px 0;
+    }
+}
