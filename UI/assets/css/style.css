@@ -58,7 +58,7 @@ ul {
     border: 2px solid #e8491d;
 }
 
-.landingBtn:hover{
+.landingBtn:hover {
     border-color: #35424a;
     background: #35424a;
     color: #ffffff;
@@ -99,25 +99,25 @@ ul {
     padding: 15px;
     background: #35424a;
     color: #ffffff;
-    margin-top:0px;
+    margin-top: 0px;
     margin-bottom: 0px;
-    height: 500px;
+    height: 740px;
 }
 
 .dark-login {
     padding: 15px;
     background: #35424a;
     color: #ffffff;
-    margin-top:0px;
+    margin-top: 0px;
     margin-bottom: 0px;
-    height: 500px;
+    height: 740px;
 }
 
 .dark-admin-details {
     padding: 15px;
     background: #35424a;
     color: #ffffff;
-    margin-top:0px;
+    margin-top: 0px;
     margin-bottom: 0px;
     height: 800px;
 }
@@ -126,20 +126,18 @@ ul {
     padding: 15px;
     background: #35424a;
     color: #ffffff;
-    margin-top:0px;
+    margin-top: 0px;
     margin-bottom: 0px;
-    height: 740px;
 }
 
 .dark-admin {
     padding: 15px;
     background: #35424a;
     color: #ffffff;
-    margin-top:0px;
+    margin-top: 0px;
     margin-bottom: 0px;
     height: 740px;
 }
-
 
 
 /* Header **/
@@ -265,7 +263,9 @@ aside#right-sidebar {
     float: right;
 }
 
-aside > #admin-sidebar, #login-sidebar, #signup-sidebar{
+aside>#admin-sidebar,
+#login-sidebar,
+#signup-sidebar {
     width: 100%;
 }
 
@@ -284,7 +284,7 @@ aside > #admin-sidebar, #login-sidebar, #signup-sidebar{
 }
 
 .userform input,
-textarea{
+textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -322,37 +322,43 @@ footer {
     text-align: center;
 }
 
+
 /* Table CSS */
+
 table {
     border-collapse: collapse;
     width: 50%;
     margin: 0 auto;
 }
 
-th, td {
+th,
+td {
     padding: 8px;
     text-align: left;
     border-bottom: 2px solid #e8491d;
 }
 
-tr:hover {background-color:#e8491d;cursor: pointer;}
+tr:hover {
+    background-color: #e8491d;
+    cursor: pointer;
+}
 
-.eye-icon i{
+.eye-icon i {
     text-decoration: none;
     background: white;
     padding: 4px;
     margin-left: 10px;
 }
 
-
-.eye-icon a:hover{
+.eye-icon a:hover {
     text-decoration: none;
-    background:#e8491d;
+    background: #e8491d;
     cursor: pointer;
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
+    /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -363,21 +369,20 @@ tr:hover {background-color:#e8491d;cursor: pointer;}
     cursor: pointer;
 }
 
-.button:hover{
-    background:#e8491d;
-    color:white;
+.button:hover {
+    background: #e8491d;
+    color: white;
     cursor: pointer;
 }
 
-.button2 {background-color: #f44336;}
-
-.button3 {background-color: darkorange;}
-
-
-.form-labels{
-    padding-left: 0px;
+.button2 {
+    background-color: #f44336;
 }
 
+.button3 {
+    background-color: darkorange;
+}
 
-
-
+.form-labels {
+    padding-left: 0px;
+}
