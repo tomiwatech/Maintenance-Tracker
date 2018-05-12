@@ -8,7 +8,8 @@
     <meta name="author" content="Sanni Michael Tomiwa">
     <title>Maintenance Tracker | About</title>
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
@@ -17,15 +18,31 @@
     <header>
         <div class="container">
             <div id="branding">
-                <h1><span class="highlight">Maintenance</span> Tracker</h1>
+                <h1>
+
+                    <a href="index.html">
+                        <span class="highlighter">Maintenance</span>
+                        <span id="trackerText">Tracker</span>
+                    </a>
+                </h1>
             </div>
             <nav>
                 <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">Signup</a></li>
-                    <li><a href="user_page.html">User</a></li>
-                    <li><a href="admin_page.html">Admin</a></li>
+                    <li class="current">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="login.html">Login</a>
+                    </li>
+                    <li>
+                        <a href="signup.html">Signup</a>
+                    </li>
+                    <li>
+                        <a href="user_page.html">User</a>
+                    </li>
+                    <li>
+                        <a href="admin_page.html">Admin</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -33,20 +50,27 @@
 
     <aside id="left-sidebar">
         <div class="dark">
-            <h3 id="quoteTitle">view requests<a class="eye-icon" href="user_request_view.html"><i id="user-eyes" class="fas fa-eye"></i></a></h3>
+            <h3 id="quoteTitle">view requests
+                <a class="eye-icon" href="user_request_view.html">
+                    <i id="user-eyes" class="fas fa-eye"></i>
+                </a>
+            </h3>
             <br>
             <h3 id="quoteTitle">make new request</h3>
             <div class="userform">
                 <div>
-                    <label class="form-labels">Equipment</label><br>
+                    <!-- <label class="form-labels">Equipment</label> -->
+                    <br>
                     <input type="text" placeholder="equipment">
                 </div>
                 <div>
-                    <label class="form-labels">Equipment Model</label><br>
+                    <!-- <label class="form-labels">Equipment Model</label> -->
+                    <br>
                     <input type="text" placeholder="model">
                 </div>
                 <div>
-                    <label class="form-labels">Request Description</label><br>
+                    <!-- <label class="form-labels">Request Description</label> -->
+                    <br>
                     <textarea placeholder="Message"></textarea>
                 </div>
                 <button class="buttonSubmit">Submit Request</button>
@@ -57,7 +81,8 @@
     <footer>
         <p>Maintenance Tracker, Copyright &copy; 2018</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="assets/js/app.js"></script>
 </body>
 

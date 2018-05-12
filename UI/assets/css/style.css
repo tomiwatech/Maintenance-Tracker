@@ -47,6 +47,21 @@ ul {
     border: 2px solid #e8491d;
 }
 
+.viewBtn {
+    height:20px; 
+    width:100px; 
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+    background: #e8491d;
+    /* color: #ffffff;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: 2px solid #e8491d; */
+}
+
 .landingBtn {
     width: 30%;
     background: #e8491d;
@@ -57,6 +72,8 @@ ul {
     margin-top: 20px;
     border: 2px solid #e8491d;
 }
+
+
 
 .landingBtn:hover {
     border-color: #35424a;
@@ -181,6 +198,16 @@ header .current a {
     font-weight: bold;
 }
 
+header #trackerText{
+    font-size: 30px
+}
+
+header .highlighter{
+    color: #e8491d;
+    font-weight: bold;
+    font-size: 30px
+}
+
 header a:hover {
     color: white;
     font-weight: bold;
@@ -247,8 +274,8 @@ header a:hover {
 }
 
 #boxes .box img {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
 }
 
 
