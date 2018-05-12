@@ -264,6 +264,7 @@ header a:hover {
 
 #boxes {
     margin-top: 20px;
+    margin-bottom: 90px;
 }
 
 #boxes .box {
@@ -342,8 +343,12 @@ ul#services li {
 }
 
 footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
     padding: 1px;
-    margin-top: 0;
     color: #ffffff;
     background-color: #e8491d;
     text-align: center;
