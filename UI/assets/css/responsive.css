@@ -31,6 +31,8 @@
         width: 100%;
         margin-bottom: 5px;
     }
+
+    /* s */
 }
 
 
@@ -74,6 +76,16 @@
         margin: 0 auto;
         float: none;
     }
+
+    .flex-container > div {
+        width: 225px;
+        height: 210px;
+        margin: 15px;
+        color: white;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
 }
 
 
@@ -99,7 +111,7 @@
 
     .buttonSubmit {
         width: 45%;
-        background: #e8491d;
+        background:  #f44336;
         color: #ffffff;
         padding: 14px 40px;
         border-radius: 10px;
@@ -107,4 +119,28 @@
         margin: 20px 200px;
         margin-top: 20px 0;
     }
+
+
+    .flex-container > div {
+        width: 420px;
+        height: 230px;
+        margin: 15px;
+        color: white;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+}
+
+@media only screen and (max-width:1297px){
+    
+    .flex-container > div {
+        width: 402px;
+        height: 230px;
+        margin: 15px;
+        color: white;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
 }

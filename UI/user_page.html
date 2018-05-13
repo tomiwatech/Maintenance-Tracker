@@ -50,30 +50,30 @@
 
     <aside id="left-sidebar">
         <div class="dark">
-            <h3 id="quoteTitle">view requests
+            <!-- <h3 id="quoteTitle">view requests
                 <a class="eye-icon" href="user_request_view.html">
                     <i id="user-eyes" class="fas fa-eye"></i>
                 </a>
-            </h3>
+            </h3> -->
             <br>
-            <h3 id="quoteTitle">make new request</h3>
+            <h3 id="quoteTitle">Make new request</h3>
             <div class="userform">
                 <div>
                     <!-- <label class="form-labels">Equipment</label> -->
                     <br>
-                    <input type="text" placeholder="equipment">
+                    <input type="text" id="equipment" placeholder="equipment">
                 </div>
                 <div>
                     <!-- <label class="form-labels">Equipment Model</label> -->
                     <br>
-                    <input type="text" placeholder="model">
+                    <input type="text" id="model" placeholder="model">
                 </div>
                 <div>
                     <!-- <label class="form-labels">Request Description</label> -->
                     <br>
-                    <textarea placeholder="Message"></textarea>
+                    <textarea id="message" placeholder="Message"></textarea>
                 </div>
-                <button class="buttonSubmit">Submit Request</button>
+                <button class="buttonSubmit" id="requestSubmit">Submit Request</button>
             </div>
         </div>
     </aside>
@@ -81,8 +81,8 @@
     <footer>
         <p>Maintenance Tracker, Copyright &copy; 2018</p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+
+    <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 

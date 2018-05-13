@@ -52,21 +52,20 @@
             <br>
             <div id="border">
                 <h3 id="quoteTitle">Login</h3>
-                <form class="userform">
+                <div class="userform">
                     <div>
                         <!-- <label class="form-labels">Username</label> -->
                         <br>
-                        <input type="text" placeholder="username">
+                        <input type="text" id="username" placeholder="username">
                     </div>
                     <div>
                         <!-- <label class="form-labels">Password</label> -->
                         <br>
-                        <input type="password" placeholder="Password">
+                        <input type="password" id="password" placeholder="Password">
                     </div>
-                    <button class="buttonSubmit">Submit</button>
+                    <button class="buttonSubmit" id="loginSubmit">Submit</button>
 
-
-                </form>
+                </div>
             </div>
         </div>
     </aside>
@@ -74,6 +73,8 @@
     <footer>
         <p>Maintenance Tracker, Copyright &copy; 2018</p>
     </footer>
+    <script src="assets/js/sweetalert.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
