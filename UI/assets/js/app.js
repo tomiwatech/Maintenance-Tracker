@@ -1,31 +1,117 @@
-$(document).ready(function() {
+const clearFields = params => {
+  switch (params) {
+    case "login":
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      break;
+    case "signup":
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("fullname").value = "";
+      break;
+    case "request":
+      document.getElementById("equipment").value = "";
+      document.getElementById("model").value = "";
+      document.getElementById("message").value = "";
+      break;
+    default:
+      console.log("Enjoy your day mr default");
+      break;
+  }
+};
 
-    $("#display").hide();
-    $("#temp").hide();
-    $("#temp2").hide();
-    $("#temp3").hide();
-
-    (function toggleDiv() {
-        console.log('hello')
-        $("#toggleButton").click(function() {
-            $("#display").toggle();
-        });
-    }());
 
 
-    $("#toggleTemplate").click(function() {
-        console.log(this)
-        $("#temp").toggle();
-    });
 
-    $("#toggleTemplate2").click(function() {
-        console.log(this)
-        $("#temp2").toggle();
-    });
 
-    $("#toggleTemplate3").click(function() {
-        console.log(this)
-        $("#temp3").toggle();
-    });
+/*****************************************************************
+                  VALIDATION FOR LOGIN
+******************************************************************/
 
-});
+const validateLogin = () => {
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+
+  if (!username || !password) {
+    swal("Oops!", "Please Fill all fields", "error");
+    clearFields('login');
+    return;
+  }
+
+  location.href = "user_page.html";
+};
+
+let login = document.getElementById("loginSubmit");
+if (login) login.addEventListener("click", validateLogin);
+
+/*****************************************************************
+                  END OF VALIDATION FOR LOGIN
+******************************************************************/
+
+
+
+
+
+
+
+/*****************************************************************
+                  VALIDATION FOR SIGNUP
+******************************************************************/
+
+const validateSignup = () => {
+  console.log("hello");
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+  let email = document.getElementById("email").value;
+  let fullname = document.getElementById("fullname").value;
+
+  if (!username || !password || !fullname || !email) {
+    swal("Oops!", "Please Fill all fields", "error");
+    clearFields('signup');
+    return;
+  }
+
+  location.href = "user_page.html";
+};
+
+let signup = document.getElementById("signupSubmit");
+
+if (signup) signup.addEventListener("click", validateSignup);
+
+/*****************************************************************
+                  END OF VALIDATION FOR SIGNUP
+******************************************************************/
+
+
+
+
+
+
+
+/*****************************************************************
+                  VALIDATION FOR REQUEST
+******************************************************************/
+
+const validateRequest = () => {
+  console.log("hello");
+  let equipment = document.getElementById("equipment").value;
+  let model = document.getElementById("model").value;
+  let message = document.getElementById("message").value;
+
+  if (!equipment || !model || !message) {
+    swal("Oops!", "Please Fill all fields", "error");
+    clearFields('request');
+    return;
+  }
+
+  location.href = "user_request_view.html";
+};
+
+let request = document.getElementById("requestSubmit");
+
+if (request) request.addEventListener("click", validateRequest);
+
+/*****************************************************************
+                  END OF VALIDATION FOR REQUEST
+******************************************************************/
