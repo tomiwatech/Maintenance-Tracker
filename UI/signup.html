@@ -17,7 +17,12 @@
         <div class="container">
             <div id="branding">
                 <h1>
-                    <span class="highlight">Maintenance</span> Tracker</h1>
+
+                    <a href="index.html">
+                        <span class="highlighter">Maintenance</span>
+                        <span id="trackerText">Tracker</span>
+                    </a>
+                </h1>
             </div>
             <nav>
                 <ul>
@@ -44,46 +49,38 @@
     <aside id="signup-sidebar">
         <div class="dark">
             <h3 id="quoteTitle">Signup</h3>
-            <form class="userform">
+            <div class="userform">
                 <div>
-                    <label class="form-labels">Fullname</label>
+                    <!-- <label class="form-labels">Fullname</label> -->
                     <br>
-                    <input type="text" placeholder="FullName">
+                    <input type="text" id="fullname" placeholder="FullName">
                 </div>
                 <div>
-                    <label class="form-labels">Email</label>
+                    <!-- <label class="form-labels">Email</label> -->
                     <br>
-                    <input type="email" placeholder="Email Address">
+                    <input type="email" id="email" placeholder="Email Address">
                 </div>
                 <div>
-                    <label class="form-labels">Username</label>
+                    <!-- <label class="form-labels">Username</label> -->
                     <br>
-                    <input type="text" placeholder="Username">
+                    <input type="text" id="username" placeholder="Username">
                 </div>
                 <div>
-                    <label class="form-labels">Password</label>
+                    <!-- <label class="form-labels">Password</label> -->
                     <br>
-                    <input type="email" placeholder="Password">
+                    <input type="password" id="password" placeholder="Password">
                 </div>
-                <button class="buttonSubmit" type="submit">Send</button>
-            </form>
-        </div>
-    </aside>
-
-   <!--  <section id="newsletter">
-        <div class="container">
-            <h1>Subscribe To Our Newsletter</h1>
-            <div class="newsletter-form">
-                <input type="email" placeholder="Enter Email...">
-                <button type="submit" class="button_1">Subscribe</button>
+                <button class="buttonSubmit" id="signupSubmit">Submit</button>
             </div>
         </div>
-    </section> -->
-
+    </aside>
 
     <footer>
         <p>Maintenance Tracker, Copyright &copy; 2018</p>
     </footer>
+
+    <script src="assets/js/sweetalert.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>
