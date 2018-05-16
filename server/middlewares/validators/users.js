@@ -1,37 +1,42 @@
-// import { check, validationResult } from 'express-validator/check';
-// import matchedData from 'express-validator/filter';
+class UserMiddlewareValidator {
+  static validatePostBody(req, res, next) {
+    const {
+      name, model, desciption, id, defect
+    } = req.body;
+    if (name === '' || model === '' || desciption === '' || id === '' || defect === '') {
+      return res.status(400).json({
+        responseCode: '01',
+        responseMessage: 'Please fill all fields'
+      });
+    }
+    next();
+  }
 
+  static validateGetId(req, res, next) {
+    const {
+      id
+    } = req.params;
+    if (typeof (id) !== 'string') {
+      return res.status(400).json({
+        responseCode: '01',
+        responseMessage: 'Please enter request ID'
+      });
+    }
+    next();
+  }
 
-// class validateController {
-//   /**
-//      * Update an existing meal
-//      *
-//      * @staticmethod
-//      * @param  {object} req - Request object
-//      * @param {object} res - Response object
-//      * @param {function} next - middleware next (for error handling)
-//      * @return {json} res.json
-//      */
-//   static validate(req, res, next) {
-//     console.log(req.body);
-//     check('name').exists(),
-//     check('model').exists(),
-//     check('description').exists(),
-//     check('defect').exists();
+  static validateUpdateBody(req, res, next) {
+    const {
+      name, model, desciption, id, defect
+    } = req.body;
+    if (name === '' || model === '' || desciption === '' || id === '' || defect === '') {
+      return res.status(400).json({
+        responseCode: '01',
+        responseMessage: 'Please fill all fields'
+      });
+    }
+    next();
+  }
+}
 
-//     const errors = validationResult(req);
-//     if (!errors.isEmpty()) {
-//       return res.status(422).json({ errors: errors.mapped() });
-//     }
-
-//     // matchedData returns only the subset of data validated by the middleware
-//     const user = matchedData(req);
-//     return res.status(201).json({
-//       status: 'welcome',
-//       statusCode: '00'
-//     });
-//   }
-// }
-
-// export default validateController;
-
+export default UserMiddlewareValidator;

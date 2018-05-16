@@ -20,6 +20,7 @@
         "import/extensions": "off",
         "consistent-return": "off",
         "linebreak-style": "off",
+        "no-param-reassign": 0,
         "comma-dangle": [
             "error",
             {
@@ -33,19 +34,19 @@
         "valid-jsdoc": [
             "error",
             {
-                "requireReturn": true,
-                "requireReturnType": true,
+                "requireReturn": false,
+                "requireReturnType": false,
                 "requireParamDescription": false,
-                "requireReturnDescription": true
+                "requireReturnDescription":false
             }
         ],
         "require-jsdoc": [
             "error",
             {
                 "require": {
-                    "FunctionDeclaration": true,
-                    "MethodDefinition": true,
-                    "ClassDeclaration": true
+                    "FunctionDeclaration": false,
+                    "MethodDefinition": false,
+                    "ClassDeclaration": false
                 }
             }
         ]
