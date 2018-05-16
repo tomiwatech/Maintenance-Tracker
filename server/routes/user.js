@@ -7,7 +7,7 @@ const router = Router();
 router.post('/requests', UserMiddleware.validatePostBody, userController.create);
 router.get('/requests', userController.getAll);
 router.get('/requests/:id', userController.findById);
-router.put('/requests/update', UserMiddleware.validateUpdateBody, userController.updateOne);
+router.put('/requests/update', UserMiddleware.validatePostBody, userController.updateOne);
 router.delete('/requests/:id', userController.deleteOne);
 router.get('/request/clear', userController.deleteAll);
 
