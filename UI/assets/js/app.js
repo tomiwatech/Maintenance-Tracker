@@ -1,44 +1,42 @@
-const clearFields = params => {
+const clearFields = (params) => {
   switch (params) {
-    case "login":
-      document.getElementById("username").value = "";
-      document.getElementById("password").value = "";
+    case 'login':
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
       break;
-    case "signup":
-      document.getElementById("username").value = "";
-      document.getElementById("password").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("fullname").value = "";
+    case 'signup':
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('fullname').value = '';
       break;
-    case "request":
-      document.getElementById("equipment").value = "";
-      document.getElementById("model").value = "";
-      document.getElementById("message").value = "";
+    case 'request':
+      document.getElementById('equipment').value = '';
+      document.getElementById('model').value = '';
+      document.getElementById('message').value = '';
       break;
     default:
-      console.log("Enjoy your day mr default");
       break;
   }
 };
 
-/*****************************************************************
-                  VALIDATION FOR LOGIN
-******************************************************************/
+  
+  //  VALIDATION FOR LOGIN
 
 const validateLogin = () => {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
   if (!username || !password) {
-    swal("Oops!", "Please Fill all fields", "error");
-    clearFields("login");
+    swal('Oops!', 'Please Fill all fields', 'error');
+    clearFields('login');
     return;
   }
 
-  location.href = "user_page.html";
+  location.href = 'user_page.html';
 };
 
-let login = document.getElementById("loginSubmit");
+const login = document.getElementById("loginSubmit");
 if (login) login.addEventListener("click", validateLogin);
 
 /*****************************************************************
