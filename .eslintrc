@@ -16,7 +16,7 @@
     },
     "rules": {
         "semi": 2,
-        "import/no-unresolved": "off",
+        "import/no-unresolved": "on",
         "import/extensions": "off",
         "consistent-return": "off",
         "linebreak-style": "off",
