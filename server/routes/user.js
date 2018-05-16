@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import userController from '../controllers/userController';
-import  validateController  from '../middlewares/validators/users';
+// import validateController from '../middlewares/validators/users';
 
 const router = Router();
 
-router.post('/requests',userController.create);
+router.post('/requests', userController.create);
 router.get('/requests', userController.getAll);
 router.get('/requests/:id', userController.findById);
 router.post('/requests/update', userController.updateOne);
