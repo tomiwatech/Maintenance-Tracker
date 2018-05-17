@@ -1,14 +1,26 @@
 language: node_js
 
 node_js:
-  - "9"
+    - stable
+    
+env:
+  global:
+    - CXX=g++-5
+    - NODE_ENV=test
 
 addons:
   apt:
+    update: true
     sources:
     - ubuntu-toolchain-r-test
     packages:
     - g++-5
+
+before_install:
+  - npm install -g node-gyp node-pre-gyp
+
+install:
+  - npm install
 
 
 script:
