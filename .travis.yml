@@ -5,6 +5,7 @@ node_js:
     
 env:
   global:
+    - CC_TEST_REPORTER_ID=6c4cac04b4d88fa23a447d480acf52a8b0662d346280c95c6d69590b55f5830c
     - CXX=g++-5
     - NODE_ENV=test
 
