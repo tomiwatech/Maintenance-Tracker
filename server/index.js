@@ -11,7 +11,7 @@ app.use(logger('dev'));
 
 // api versioning;
 app.use('/api/v1', api);
-app.get('/*', (_, res) => res.send('Cant find resource').status(400));
+app.get('/', (req, res) => res.send({ ok: true, message: 'Welcome to Maintenance Tracker', baseurl: '/api/v1' }).status(200));
 app.listen(PORT, () => {
   if (process.env.NODE_ENV === 'dev') {
     /* eslint no-console: 0 */
