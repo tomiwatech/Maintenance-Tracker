@@ -1,7 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../../index';
-import UserController from '../../controllers/userController';
 
 chai.use(chaiHttp);
 chai.should();
@@ -12,7 +11,7 @@ describe('Users Controller', () => {
    * Test the /GET route
    */
     describe('/GET REQUEST', () => {
-        it('it should GET all users requests', (done) => {
+        it('it should GET all users requests', function(done){
             chai.request(server)
                 .get('/api/v1/users/requests/')
                 .end((err, res) => {
@@ -37,7 +36,7 @@ describe('Users Controller', () => {
                 });
         });
 
-        it('it should not GET user request because id is not found', (done) => {
+        it('it should not GET user request because id is not found', function(done){
             let requestId = 7;
             chai.request(server)
                 .get(`/api/v1/users/requests/${requestId}`)
@@ -57,8 +56,8 @@ describe('Users Controller', () => {
     */
     describe('/POST REQUEST', () => {
         it('it should make a post request if all fields are not empty ', (done) => {
-            let request = {
-                name: "final",
+            let requestBody = {
+                name: "finallize",
                 model: "hh",
                 description: "Best in town",
                 id: "3",
@@ -66,7 +65,7 @@ describe('Users Controller', () => {
             }
             chai.request(server)
                 .post('/api/v1/users/requests/')
-                .send(request)
+                .send(requestBody)
                 .end((err, res) => {
                     res.should.have.status(201);
                     res.body.should.be.deep.equal({
@@ -78,7 +77,7 @@ describe('Users Controller', () => {
         });
 
         it('it should not make a post request if some fields are empty ', (done) => {
-            let request = {
+            let body = {
                 name: "",
                 model: "hh",
                 description: "",
@@ -87,7 +86,7 @@ describe('Users Controller', () => {
             }
             chai.request(server)
                 .post('/api/v1/users/requests/')
-                .send(request)
+                .send(body)
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
@@ -99,7 +98,7 @@ describe('Users Controller', () => {
         });
 
         it('it should throw an error when you try to add duplicate data ', (done) => {
-            let request = {
+            let data = {
                 name: 'Sanni Mikolo',
                 model: 'hello boy',
                 desciption: 'i am not a nigerian developer',
@@ -108,7 +107,7 @@ describe('Users Controller', () => {
             }
             chai.request(server)
                 .post('/api/v1/users/requests/')
-                .send(request)
+                .send(data)
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
@@ -175,7 +174,7 @@ describe('Users Controller', () => {
         });
 
         it('it should not update the request if request does not exist in db in the first place ', (done) => {
-            let request = {
+            let requestData = {
                 name: "finallize",
                 model: "hh",
                 description: "Best in town",
@@ -184,7 +183,7 @@ describe('Users Controller', () => {
             }
             chai.request(server)
                 .put('/api/v1/users/requests/update')
-                .send(request)
+                .send(requestData)
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
@@ -216,7 +215,7 @@ describe('Users Controller', () => {
 
         it('it should not delete user request because id is not found', (done) => {
             chai.request(server)
-                .delete('/api/v1/users/requests/7')
+                .delete('/api/v1/users/requests/100')
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
