@@ -4,7 +4,7 @@
 
 <!-- [![Coverage Status](https://coveralls.io/repos/github/tomiwatech/Maintenance-Tracker/badge.svg?branch=master)](https://coveralls.io/github/tomiwatech/Maintenance-Tracker?branch=master) -->
 
-<p align="center">
+<p>
     <a style="padding:5px" href="https://codeclimate.com/github/tomiwatech/Maintenance-Tracker/maintainability" alt="Backers on Open Collective">
         <img src="https://api.codeclimate.com/v1/badges/6c6d78b9aec5c31e179d/maintainability" />
     </a>
