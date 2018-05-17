@@ -1,9 +1,6 @@
 class UserMiddlewareValidator {
   static validatePostBody(req, res, next) {
-    const {
-      name, model, desciption, id, defect
-    } = req.body;
-    if (name === '' || model === '' || desciption === '' || id === '' || defect === '') {
+    if (req.body.name === '' || req.body.model === '' || req.body.desciption === '' || req.body.id === '' || req.body.defect === '') {
       return res.status(400).json({
         responseCode: '01',
         responseMessage: 'Please fill all fields'
