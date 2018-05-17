@@ -202,8 +202,9 @@ describe('Users Controller', () => {
     describe('/DELETE REQUEST', () => {
 
         it('it should delete user request by id specified', (done) => {
+            let request = 3;
             chai.request(server)
-                .delete('/api/v1/users/requests/3')
+                .delete(`/api/v1/users/requests/${request}`)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('responseMessage').to.equals('User Deleted');
