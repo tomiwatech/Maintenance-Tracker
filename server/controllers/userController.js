@@ -1,6 +1,24 @@
 import UserhelperClass from '../helpers/users/user';
 
 const dataStore = [];
+const dummyData1 = {
+  name: 'Sanni',
+  model: 'hello boy',
+  desciption: 'i am not a nigerian developer',
+  id: 1,
+  defect: 'broken'
+};
+
+const dummyData2 = {
+  name: 'Sanni Mikolo',
+  model: 'hello boy',
+  desciption: 'i am not a nigerian developer',
+  id: 2,
+  defect: 'broken'
+};
+
+dataStore.push(dummyData1);
+dataStore.push(dummyData2);
 class UserController {
   static create(req, res) {
     const { id } = req.body;
@@ -54,8 +72,8 @@ class UserController {
 
   static getAll(req, res) {
     return res.status(200).json({
-      statusCode: '00',
-      statusMessage: 'Successfully fetched all users requests',
+      responseCode: '00',
+      responseMessage: 'Successfully fetched all users requests',
       data: dataStore
     });
   }
