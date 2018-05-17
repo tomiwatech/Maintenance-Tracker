@@ -12,7 +12,7 @@ describe('Users Controller', () => {
    * Test the /GET route
    */
     describe('/GET REQUEST', () => {
-        it('it should GET all the users', (done) => {
+        it('it should GET all users requests', (done) => {
             chai.request(server)
                 .get('/api/v1/users/requests/')
                 .end((err, res) => {
@@ -25,8 +25,9 @@ describe('Users Controller', () => {
         });
 
         it('it should GET user request by id specified', (done) => {
+            let requestId = 1;
             chai.request(server)
-                .get('/api/v1/users/requests/1')
+                .get(`/api/v1/users/requests/${requestId}`)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('responseMessage').to.equals('User found');
@@ -37,8 +38,9 @@ describe('Users Controller', () => {
         });
 
         it('it should not GET user request because id is not found', (done) => {
+            let requestId = 7;
             chai.request(server)
-                .get('/api/v1/users/requests/7')
+                .get(`/api/v1/users/requests/${requestId}`)
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
@@ -75,7 +77,7 @@ describe('Users Controller', () => {
                 });
         });
 
-        it('it should make a post request if some fields are empty ', (done) => {
+        it('it should not make a post request if some fields are empty ', (done) => {
             let request = {
                 name: "",
                 model: "hh",
