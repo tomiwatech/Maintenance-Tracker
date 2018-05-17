@@ -1,7 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import server from '../../index';
-import UserController from '../../controllers/userController';
 
 chai.use(chaiHttp);
 chai.should();
