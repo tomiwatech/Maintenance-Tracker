@@ -4,7 +4,7 @@
   "description": "Maintenance Tracker App is an application that provides users with the ability to reach out to operations or repairs department regarding repair or maintenance requests and monitor the status of their request.",
   "main": "server/app.js",
   "scripts": {
-    "test:dev": "cross-env NODE_ENV=test nyc mocha server/tests  --timeout 15000 --compilers js:babel-core/register --recursive || true",
+    "test:dev": "nyc mocha server/tests  --timeout 15000 --compilers js:babel-core/register --recursive || true",
     "start": "cross-env NODE_ENV=dev PORT=4444 nodemon --exec babel-node --presets=env ./server/index.js",
     "lint:dev": "eslint \"server/**/*.js\" index.js --fix || true"
   },
