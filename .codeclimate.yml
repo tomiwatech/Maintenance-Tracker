@@ -25,3 +25,4 @@ exclude_paths:
 - ".nyc_output/"
 - "node_modules/"
 - "UI/"
+- "coverage/"

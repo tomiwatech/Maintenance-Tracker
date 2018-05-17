@@ -24,8 +24,97 @@
 
 
 
-# Maintenance-Tracker
-Miantenance Tracker is an app that allows you to track, repair and fix your equipments
+## Maintenance-Tracker
+Maintenance Tracker App is an application that provides users with the ability to reach out to operations or repairs department regarding repair or maintenance requests and monitor the status of their request.
 
 
-# Installation
+## Installation
+
+```bash
+git clone https://github.com/tomiwatech/Maintenance-Tracker.git 
+```
+
+```bash
+cd Maintenance-Tracker
+```
+
+```bash
+npm install
+```
+
+```bash
+npm start
+```
+
+## Test
+Testing is used at key checkpoints in the overall process to determine whether objectives are being met. It also speed up software development process
+
+##### Server side tests
+```bash
+npm run test:dev
+```
+
+## Linting
+Linting is the process of running a program that will analyse code for potential errors.
+```bash
+npm run lint:dev
+```
+
+
+<h3>ENDPOINTS</h3>
+<hr>
+<table>
+  <tr>
+      <th>Request</th>
+      <th>End Point</th>
+      <th>Action</th>
+  </tr>
+  <tr>
+      <td>POST</td>
+      <td>/api/v1/users/requests</td>
+      <td>Create a user request</td>
+  </tr>
+  <tr>
+      <td>PUT</td>
+      <td>/api/v1/users/requests/:id</td>
+      <td>Modify a request by id</td>
+  </tr>
+  <tr>
+      <td>GET</td>
+      <td>/api/v1/users/requests</td>
+      <td>Get all requests</td>
+  </tr>
+  <tr>
+        <td>GET</td>
+        <td>/api/v1/users/requests/:id</td>
+        <td>Get a request by id</td>
+  </tr>
+  <tr>
+      <td>DELETE</td>
+      <td>/api/v1/users/requests/:id</td>
+      <td>Delete a request by id</td>
+  </tr>
+
+</table>
+<br/>
+
+# Technologies
+
+* [Eslint](https://eslint.org/)
+* [TravisCI](https://travis-ci.org/)
+* [Nodejs](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
+* [HoundCI](https://houndci.com)
+* [Code-Climate](https://codeclimate.com/)
+* [Coveralls](https://coveralls.io/)
+* [Babel](https://babeljs.io/)
+
+
+## Author 
+____
+Sanni Michael Tomiwa
+[Sanni Michael Tomiwa](https://tomiwatech.github.io/)
+
+
+checkout the UI at https://tomiwatech.github.io/Maintenance-Tracker/UI/
+
