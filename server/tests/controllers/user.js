@@ -101,8 +101,8 @@ describe('Users Controller', () => {
             let data = {
                 name: 'Sanni Mikolo',
                 model: 'hello boy',
-                desciption: 'i am not a nigerian developer',
-                id: 2,
+                description: 'i am not a nigerian developer',
+                id: '2',
                 defect: 'broken'
             }
             chai.request(server)
