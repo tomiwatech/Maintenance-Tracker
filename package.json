@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test:dev": "nyc mocha server/tests  --timeout 15000 --compilers js:babel-core/register --recursive --exit || true",
-    "start": "cross-env NODE_ENV=dev PORT=4444 nodemon --exec babel-node --presets=env ./server/index.js",
+    "start": "cross-env NODE_ENV=dev nodemon --exec babel-node --presets=env ./server/index.js",
     "lint:dev": "eslint \"server/**/*.js\" index.js --fix || true",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
