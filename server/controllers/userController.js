@@ -70,16 +70,13 @@ class UserController {
   }
 
   static updateOne(req, res) {
-    const {
-      name, model, description, id, defect
-    } = req.body;
-    const position = UserhelperClass.findUser(dataStore, id);
+    const position = UserhelperClass.findUser(dataStore, req.body.id);
     if (position > -1) {
-      dataStore[position].id = id;
-      dataStore[position].name = name;
-      dataStore[position].model = model;
-      dataStore[position].description = description;
-      dataStore[position].defect = defect;
+      dataStore[position].id = req.body.id;
+      dataStore[position].name = req.body.name;
+      dataStore[position].model = req.body.model;
+      dataStore[position].description = req.body.description;
+      dataStore[position].defect = req.body.defect;
       return res.status(200).json({
         responseCode: '00',
         responseMessage: 'User details Updated',

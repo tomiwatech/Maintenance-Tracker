@@ -11,7 +11,7 @@ describe('Users Controller', () => {
    * Test the /GET route
    */
     describe('/GET REQUEST', () => {
-        it('it should GET all users requests', function(done){
+        it('it should GET all users requests', function (done) {
             chai.request(server)
                 .get('/api/v1/users/requests/')
                 .end((err, res) => {
@@ -24,9 +24,8 @@ describe('Users Controller', () => {
         });
 
         it('it should GET user request by id specified', (done) => {
-            let requestId = 1;
             chai.request(server)
-                .get(`/api/v1/users/requests/${requestId}`)
+                .get('/api/v1/users/requests/1')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('responseMessage').to.equals('User found');
@@ -36,7 +35,7 @@ describe('Users Controller', () => {
                 });
         });
 
-        it('it should not GET user request because id is not found', function(done){
+        it('it should not GET user request because id is not found', function (done) {
             let requestId = 7;
             chai.request(server)
                 .get(`/api/v1/users/requests/${requestId}`)
@@ -56,16 +55,15 @@ describe('Users Controller', () => {
     */
     describe('/POST REQUEST', () => {
         it('it should make a post request if all fields are not empty ', (done) => {
-            let requestBody = {
-                name: "finallize",
-                model: "hh",
-                description: "Best in town",
-                id: "3",
-                defect: "Faulty"
-            }
             chai.request(server)
                 .post('/api/v1/users/requests/')
-                .send(requestBody)
+                .send({
+                    name: "finallize",
+                    model: "hh",
+                    description: "Best in town",
+                    id: "3",
+                    defect: "Faulty"
+                })
                 .end((err, res) => {
                     res.should.have.status(201);
                     res.body.should.be.deep.equal({
@@ -77,6 +75,7 @@ describe('Users Controller', () => {
         });
 
         it('it should not make a post request if some fields are empty ', (done) => {
+
             let body = {
                 name: "",
                 model: "hh",
@@ -84,6 +83,7 @@ describe('Users Controller', () => {
                 id: "2",
                 defect: "Faulty"
             }
+
             chai.request(server)
                 .post('/api/v1/users/requests/')
                 .send(body)
@@ -98,13 +98,14 @@ describe('Users Controller', () => {
         });
 
         it('it should throw an error when you try to add duplicate data ', (done) => {
-            let data = {
-                name: 'Sanni Mikolo',
-                model: 'hello boy',
-                description: 'i am not a nigerian developer',
-                id: '2',
-                defect: 'broken'
-            }
+
+            let data = {};
+            data.name = 'Sanni Mikolo';
+            data.model = 'hello boy';
+            data.description = 'i am not a nigerian developer';
+            data.id = 2;
+            data.defect = 'broken';
+
             chai.request(server)
                 .post('/api/v1/users/requests/')
                 .send(data)
@@ -125,6 +126,7 @@ describe('Users Controller', () => {
     */
     describe('/UPDATE REQUEST', () => {
         it('it should update the request if request is not empty ', (done) => {
+
             let request = {
                 name: "finallize",
                 model: "hh",
@@ -132,6 +134,7 @@ describe('Users Controller', () => {
                 id: "3",
                 defect: "Faulty"
             }
+
             chai.request(server)
                 .put('/api/v1/users/requests/update')
                 .send(request)
@@ -153,13 +156,14 @@ describe('Users Controller', () => {
         });
 
         it('it should not update the request if some request fields are empty ', (done) => {
-            let request = {
-                name: "",
-                model: "",
-                description: "Best in town",
-                id: "",
-                defect: "Faulty"
-            }
+
+            let request = {};
+            request.name = '';
+            request.model = '';
+            request.description = 'Best in town';
+            request.id = '';
+            request.defect = '';
+
             chai.request(server)
                 .put('/api/v1/users/requests/update')
                 .send(request)
@@ -174,16 +178,15 @@ describe('Users Controller', () => {
         });
 
         it('it should not update the request if request does not exist in db in the first place ', (done) => {
-            let requestData = {
-                name: "finallize",
-                model: "hh",
-                description: "Best in town",
-                id: "10",
-                defect: "Faulty"
-            }
             chai.request(server)
                 .put('/api/v1/users/requests/update')
-                .send(requestData)
+                .send({
+                    name: "finallize",
+                    model: "hh",
+                    description: "Best in town",
+                    id: "10",
+                    defect: "Faulty"
+                })
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
