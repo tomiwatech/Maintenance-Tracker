@@ -71,7 +71,7 @@ class UserController {
 
   static updateOne(req, res) {
     const {
-      name, model, desciption, id, defect
+      name, model, description, id, defect
     } = req.body;
     const position = UserhelperClass.findUser(dataStore, id);
     if (position > -1) {
