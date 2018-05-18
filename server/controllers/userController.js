@@ -78,7 +78,7 @@ class UserController {
       dataStore[position].id = id;
       dataStore[position].name = name;
       dataStore[position].model = model;
-      dataStore[position].desciption = desciption;
+      dataStore[position].description = description;
       dataStore[position].defect = defect;
       return res.status(200).json({
         responseCode: '00',
