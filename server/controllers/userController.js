@@ -71,14 +71,14 @@ class UserController {
 
   static updateOne(req, res) {
     const {
-      name, model, desciption, id, defect
+      name, model, description, id, defect
     } = req.body;
     const position = UserhelperClass.findUser(dataStore, id);
     if (position > -1) {
       dataStore[position].id = id;
       dataStore[position].name = name;
       dataStore[position].model = model;
-      dataStore[position].desciption = desciption;
+      dataStore[position].description = description;
       dataStore[position].defect = defect;
       return res.status(200).json({
         responseCode: '00',
