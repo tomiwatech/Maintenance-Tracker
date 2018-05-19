@@ -4,7 +4,7 @@
         "browser": true,
         "jest": true,
         "node": true,
-        "es6":true,
+        "es6": true,
         "mocha": true
     },
     "parserOptions": {
@@ -34,19 +34,19 @@
         "valid-jsdoc": [
             "error",
             {
-                "requireReturn": false,
-                "requireReturnType": false,
+                "requireReturn": true,
+                "requireReturnType": true,
                 "requireParamDescription": false,
-                "requireReturnDescription":false
+                "requireReturnDescription": true
             }
         ],
         "require-jsdoc": [
             "error",
             {
                 "require": {
-                    "FunctionDeclaration": false,
-                    "MethodDefinition": false,
-                    "ClassDeclaration": false
+                    "FunctionDeclaration": true,
+                    "MethodDefinition": true,
+                    "ClassDeclaration": true
                 }
             }
         ]

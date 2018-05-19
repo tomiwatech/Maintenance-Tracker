@@ -112,9 +112,16 @@ npm run lint:dev
 
 ## Author 
 ____
-Sanni Michael Tomiwa
 [Sanni Michael Tomiwa](https://tomiwatech.github.io/)
 
+## Find Application stories on pivotal Tracker
+____
+[Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2170224)
 
-checkout the UI at https://tomiwatech.github.io/Maintenance-Tracker/UI/
+## View app here
+[ui](https://tomiwatech.github.io/Maintenance-Tracker/UI/)
+
+## Find Api on heroku
+[maintenance-tracker](https://maintenance-trackerr.herokuapp.com/)
+
 

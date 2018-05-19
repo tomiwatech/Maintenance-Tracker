@@ -99,11 +99,11 @@ describe('Users Controller', () => {
 
         it('it should throw an error when you try to add duplicate data ', (done) => {
 
-            let data = {};
+            const data = {};
             data.name = 'Sanni Mikolo';
             data.model = 'hello boy';
             data.description = 'i am not a nigerian developer';
-            data.id = 2;
+            data.id = '2';
             data.defect = 'broken';
 
             chai.request(server)
@@ -157,7 +157,7 @@ describe('Users Controller', () => {
 
         it('it should not update the request if some request fields are empty ', (done) => {
 
-            let request = {};
+            const request = {};
             request.name = '';
             request.model = '';
             request.description = 'Best in town';
