@@ -1,4 +1,17 @@
+/**
+ * @exports
+ * @class userMiddlewareValidator
+ */
 class UserMiddlewareValidator {
+  /**
+   * UserMiddlewareValidator
+   *
+   * @staticmethod
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @param {function} next - middleware next (for error handling)
+   * @return {json} res.json
+   */
   static validatePostBody(req, res, next) {
     const {
       name, model, description, id, defect
