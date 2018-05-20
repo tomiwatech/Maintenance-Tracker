@@ -18,13 +18,13 @@ class UserController {
     if (position > -1) {
       return res.status(400).json({
         responseCode: '01',
-        responseMessage: 'User Already Exists'
+        responseMessage: 'User Already Exists',
       });
     }
     dataStore.push(req.body);
     return res.status(201).json({
       responseCode: '00',
-      responseMessage: 'New request created successfully'
+      responseMessage: 'New request created successfully',
     });
   }
   /**
@@ -43,12 +43,12 @@ class UserController {
       return res.status(200).json({
         responseCode: '00',
         responseMessage: 'User Deleted',
-        data: dataStore
+        data: dataStore,
       });
     }
     return res.status(400).json({
       responseCode: '01',
-      responseMessage: 'User Could not be deleted. ID not found'
+      responseMessage: 'User Could not be deleted. ID not found',
     });
   }
   /**
@@ -66,13 +66,13 @@ class UserController {
       return res.status(200).json({
         responseCode: '00',
         responseMessage: 'User found',
-        data: dataStore[position]
+        data: dataStore[position],
       });
     }
 
     return res.status(400).json({
       responseCode: '01',
-      responseMessage: 'User not found'
+      responseMessage: 'User not found',
     });
   }
   /**
@@ -87,7 +87,7 @@ class UserController {
     return res.status(200).json({
       responseCode: '00',
       responseMessage: 'Successfully fetched all users requests',
-      data: dataStore
+      data: dataStore,
     });
   }
   /**
@@ -103,7 +103,7 @@ class UserController {
     return res.status(200).json({
       responseCode: '00',
       responseMessage: 'Data Source Emptied Successfully',
-      data: dataStore
+      data: dataStore,
     });
   }
   /**
@@ -125,12 +125,12 @@ class UserController {
       return res.status(200).json({
         responseCode: '00',
         responseMessage: 'User details Updated',
-        data: dataStore[position]
+        data: dataStore[position],
       });
     }
     return res.status(400).json({
       responseCode: '01',
-      responseMessage: 'User with id not found'
+      responseMessage: 'User with id not found',
     });
   }
 }
