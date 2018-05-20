@@ -1,41 +1,45 @@
-const clearFields = (params) => {
+const clearFields = params => {
   switch (params) {
-    case 'login':
-      document.getElementById('username').value = '';
-      document.getElementById('password').value = '';
+    case "login":
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
       break;
-    case 'signup':
-      document.getElementById('username').value = '';
-      document.getElementById('password').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('fullname').value = '';
+    case "signup":
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("fullname").value = "";
       break;
-    case 'request':
-      document.getElementById('equipment').value = '';
-      document.getElementById('model').value = '';
-      document.getElementById('message').value = '';
+    case "request":
+      document.getElementById("equipment").value = "";
+      document.getElementById("model").value = "";
+      document.getElementById("message").value = "";
+      document.getElementById('requestType').selectedIndex = 0;
       break;
     default:
+      console.log("Enjoy your day mr default");
       break;
   }
 };
 
-//  VALIDATION FOR LOGIN
+/*****************************************************************
+                  VALIDATION FOR LOGIN
+******************************************************************/
 
 const validateLogin = () => {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
 
   if (!username || !password) {
-    swal('Oops!', 'Please Fill all fields', 'error');
-    clearFields('login');
+    swal("Oops!", "Please Fill all fields", "error");
+    clearFields("login");
     return;
   }
 
-  location.href = 'user_page.html';
+  location.href = "user_page.html";
 };
 
-const login = document.getElementById("loginSubmit");
+let login = document.getElementById("buttonSubmit");
 if (login) login.addEventListener("click", validateLogin);
 
 /*****************************************************************
@@ -79,8 +83,9 @@ const validateRequest = () => {
   let equipment = document.getElementById("equipment").value;
   let model = document.getElementById("model").value;
   let message = document.getElementById("message").value;
+  let request = document.getElementById('requestType');
 
-  if (!equipment || !model || !message) {
+  if (!equipment || !model || !message || request.selectedIndex == 0) {
     swal("Oops!", "Please Fill all fields", "error");
     clearFields("request");
     return;
@@ -125,7 +130,6 @@ const resolveRequest = evt => {
 let resolveBtn = document.getElementById("resolve");
 let approveBtn = document.getElementById("approve");
 let rejectBtn = document.getElementById("reject");
-// let statusBtn = document.getElementById("status");
 if (resolveBtn) resolveBtn.addEventListener("click", resolveRequest); resolveBtn.params = "resolve";
 if (approveBtn) approveBtn.addEventListener("click", resolveRequest);approveBtn.params = "approve";
 if (rejectBtn) rejectBtn.addEventListener("click", resolveRequest); rejectBtn.params = "reject";
