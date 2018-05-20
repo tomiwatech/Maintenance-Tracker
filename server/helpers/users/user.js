@@ -10,7 +10,7 @@ class UserhelperClass {
    * @param {number} id - Response object
    * @return {number} a
    */
-  static findUser(dataStore, id) {
+  static findRequest(dataStore, id) {
     for (let i = 0; i < dataStore.length; i += 1) {
       if (Number(dataStore[i].id) === Number(id)) {
         return i;

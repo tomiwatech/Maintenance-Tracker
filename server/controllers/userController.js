@@ -14,11 +14,11 @@ class UserController {
    */
   static create(req, res) {
     const { id } = req.body;
-    const position = UserhelperClass.findUser(dataStore, id);
+    const position = UserhelperClass.findRequest(dataStore, id);
     if (position > -1) {
       return res.status(400).json({
         responseCode: '01',
-        responseMessage: 'User Already Exists',
+        responseMessage: 'Request Already Exists',
       });
     }
     dataStore.push(req.body);
@@ -37,18 +37,18 @@ class UserController {
    */
   static deleteOne(req, res) {
     const { id } = req.params;
-    const position = UserhelperClass.findUser(dataStore, id);
+    const position = UserhelperClass.findRequest(dataStore, id);
     if (position > -1) {
       dataStore.splice(position, 1);
       return res.status(200).json({
         responseCode: '00',
-        responseMessage: 'User Deleted',
+        responseMessage: 'Request Deleted',
         data: dataStore,
       });
     }
     return res.status(400).json({
       responseCode: '01',
-      responseMessage: 'User Could not be deleted. ID not found',
+      responseMessage: 'Request Could not be deleted. ID not found',
     });
   }
   /**
@@ -61,18 +61,18 @@ class UserController {
    */
   static findById(req, res) {
     const { id } = req.params;
-    const position = UserhelperClass.findUser(dataStore, id);
+    const position = UserhelperClass.findRequest(dataStore, id);
     if (position > -1) {
       return res.status(200).json({
         responseCode: '00',
-        responseMessage: 'User found',
+        responseMessage: 'Request found',
         data: dataStore[position],
       });
     }
 
     return res.status(400).json({
       responseCode: '01',
-      responseMessage: 'User not found',
+      responseMessage: 'Request not found',
     });
   }
   /**
@@ -115,7 +115,7 @@ class UserController {
    * @return {json} res.json
    */
   static updateOne(req, res) {
-    const position = UserhelperClass.findUser(dataStore, req.body.id);
+    const position = UserhelperClass.findRequest(dataStore, req.body.id);
     if (position > -1) {
       dataStore[position].id = req.body.id;
       dataStore[position].name = req.body.name;
@@ -124,13 +124,13 @@ class UserController {
       dataStore[position].defect = req.body.defect;
       return res.status(200).json({
         responseCode: '00',
-        responseMessage: 'User details Updated',
+        responseMessage: 'User request details Updated',
         data: dataStore[position],
       });
     }
     return res.status(400).json({
       responseCode: '01',
-      responseMessage: 'User with id not found',
+      responseMessage: 'Request with this id is not found',
     });
   }
 }

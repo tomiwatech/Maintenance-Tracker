@@ -28,7 +28,7 @@ describe('Users Controller', () => {
                 .get('/api/v1/users/requests/1')
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.have.property('responseMessage').to.equals('User found');
+                    res.body.should.have.property('responseMessage').to.equals('Request found');
                     res.body.should.have.property('responseCode').to.equals('00');
                     res.body.should.have.property('data').to.be.an('object');
                     done();
@@ -43,7 +43,7 @@ describe('Users Controller', () => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
                         responseCode: '01',
-                        responseMessage: 'User not found'
+                        responseMessage: 'Request not found'
                     })
                     done();
                 });
@@ -113,7 +113,7 @@ describe('Users Controller', () => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
                         responseCode: '01',
-                        responseMessage: 'User Already Exists'
+                        responseMessage: 'Request Already Exists'
                     })
                     done();
                 });
@@ -142,7 +142,7 @@ describe('Users Controller', () => {
                     res.should.have.status(200);
                     res.body.should.be.deep.equal({
                         responseCode: '00',
-                        responseMessage: 'User details Updated',
+                        responseMessage: 'User request details Updated',
                         data: {
                             name: "finallize",
                             model: "hh",
@@ -191,7 +191,7 @@ describe('Users Controller', () => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
                         responseCode: '01',
-                        responseMessage: 'User with id not found'
+                        responseMessage: 'Request with this id is not found'
                     })
                     done();
                 });
@@ -210,7 +210,7 @@ describe('Users Controller', () => {
                 .delete(`/api/v1/users/requests/${request}`)
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.have.property('responseMessage').to.equals('User Deleted');
+                    res.body.should.have.property('responseMessage').to.equals('Request Deleted');
                     res.body.should.have.property('responseCode').to.equals('00');
                     res.body.should.have.property('data').to.be.an('array');
                     done();
@@ -224,7 +224,7 @@ describe('Users Controller', () => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
                         responseCode: '01',
-                        responseMessage: 'User Could not be deleted. ID not found'
+                        responseMessage: 'Request Could not be deleted. ID not found'
                     })
                     done();
                 });

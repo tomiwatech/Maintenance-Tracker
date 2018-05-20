@@ -1,17 +1,17 @@
 const dataStore = [
   {
-    name: 'Sanni',
-    model: 'hello boy',
-    desciption: 'i am not a nigerian developer',
+    name: 'Infinix Zero',
+    model: 'X119',
+    desciption: 'Fell down and screen broke',
     id: 1,
-    defect: 'broken',
+    defect: 'Broken Screen',
   },
   {
-    name: 'Sanni Mikolo',
-    model: 'hello boy',
-    desciption: 'i am not a nigerian developer',
+    name: 'Toyota Camry',
+    model: '2008',
+    desciption: 'Wind screen got broken during an accident',
     id: 2,
-    defect: 'broken',
+    defect: 'Broken Windscreen',
   },
 ];
 
