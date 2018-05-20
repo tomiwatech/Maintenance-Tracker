@@ -14,6 +14,7 @@ const clearFields = params => {
       document.getElementById("equipment").value = "";
       document.getElementById("model").value = "";
       document.getElementById("message").value = "";
+      document.getElementById('requestType').selectedIndex = 0;
       break;
     default:
       console.log("Enjoy your day mr default");
@@ -38,7 +39,7 @@ const validateLogin = () => {
   location.href = "user_page.html";
 };
 
-let login = document.getElementById("loginSubmit");
+let login = document.getElementById("buttonSubmit");
 if (login) login.addEventListener("click", validateLogin);
 
 /*****************************************************************
@@ -82,8 +83,9 @@ const validateRequest = () => {
   let equipment = document.getElementById("equipment").value;
   let model = document.getElementById("model").value;
   let message = document.getElementById("message").value;
+  let request = document.getElementById('requestType');
 
-  if (!equipment || !model || !message) {
+  if (!equipment || !model || !message || request.selectedIndex == 0) {
     swal("Oops!", "Please Fill all fields", "error");
     clearFields("request");
     return;
@@ -128,7 +130,6 @@ const resolveRequest = evt => {
 let resolveBtn = document.getElementById("resolve");
 let approveBtn = document.getElementById("approve");
 let rejectBtn = document.getElementById("reject");
-// let statusBtn = document.getElementById("status");
 if (resolveBtn) resolveBtn.addEventListener("click", resolveRequest); resolveBtn.params = "resolve";
 if (approveBtn) approveBtn.addEventListener("click", resolveRequest);approveBtn.params = "approve";
 if (rejectBtn) rejectBtn.addEventListener("click", resolveRequest); rejectBtn.params = "reject";

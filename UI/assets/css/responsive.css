@@ -5,11 +5,8 @@
     header #branding,
     header nav,
     header nav li,
-    #newsletter h1,
-    #newsletter form,
     #boxes .box,
-    article#main-col,
-    aside#sidebar {
+    section#sidebar {
         float: none;
         text-align: center;
         width: 100%;
@@ -17,22 +14,18 @@
     header {
         padding-bottom: 20px;
     }
-    #showcase h1 {
+    #backgroundImg h1 {
         margin-top: 40px;
     }
-    #newsletter button,
     .userform button {
         display: block;
         width: 100%;
     }
-    #newsletter form input[type="email"],
     .userform input,
     .userform textarea {
         width: 100%;
         margin-bottom: 5px;
     }
-
-    /* s */
 }
 
 
@@ -71,11 +64,6 @@
         height: 1200px
     }
 
-    #newsletter .newsletter-form {
-        width: 45%;
-        margin: 0 auto;
-        float: none;
-    }
 
     .flex-container > div {
         width: 225px;
@@ -94,11 +82,7 @@
         height: 920px;
     }
 
-    .form-labels{
-        padding-left: 117px;
-    }
-
-    .userform input, textarea {
+    .userform input, textarea , select{
         width: 70%;
         padding: 13px 25px;
         margin: 8px 120px;
@@ -109,7 +93,7 @@
         font-size: 18px;
     }
 
-    .buttonSubmit {
+    #buttonSubmit , #signupSubmit, #requestSubmit {
         width: 45%;
         background:  #f44336;
         color: #ffffff;
