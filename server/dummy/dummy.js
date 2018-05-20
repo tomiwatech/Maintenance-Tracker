@@ -4,15 +4,15 @@ const dataStore = [
     model: 'hello boy',
     desciption: 'i am not a nigerian developer',
     id: 1,
-    defect: 'broken'
+    defect: 'broken',
   },
   {
     name: 'Sanni Mikolo',
     model: 'hello boy',
     desciption: 'i am not a nigerian developer',
     id: 2,
-    defect: 'broken'
-  }
+    defect: 'broken',
+  },
 ];
 
 export default dataStore;

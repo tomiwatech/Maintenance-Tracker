@@ -6,19 +6,6 @@ node_js:
 env:
   global:
     - CC_TEST_REPORTER_ID=6c4cac04b4d88fa23a447d480acf52a8b0662d346280c95c6d69590b55f5830c
-    - CXX=g++-5
-    - NODE_ENV=test
-
-addons:
-  apt:
-    update: true
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-5
-
-before_install:
-  - npm install -g node-gyp node-pre-gyp
 
 before_script:
   - chmod 0755 ./node_modules/.bin/mocha
