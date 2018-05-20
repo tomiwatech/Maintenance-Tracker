@@ -1,3 +1,3 @@
-
-server/tests
+server/tests/
 coverage/
+UI/

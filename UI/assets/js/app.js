@@ -20,8 +20,7 @@ const clearFields = (params) => {
   }
 };
 
-  
-  //  VALIDATION FOR LOGIN
+//  VALIDATION FOR LOGIN
 
 const validateLogin = () => {
   const username = document.getElementById('username').value;
