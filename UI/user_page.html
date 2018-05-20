@@ -21,7 +21,7 @@
                 <h1>
 
                     <a href="index.html">
-                        <span class="highlighter">Maintenance</span>
+                        <span id="highlighter">Maintenance</span>
                         <span id="trackerText">Tracker</span>
                     </a>
                 </h1>
@@ -48,35 +48,35 @@
         </div>
     </header>
 
-    <aside id="left-sidebar">
+    <section id="request-bar">
         <div class="dark">
-            <!-- <h3 id="quoteTitle">view requests
-                <a class="eye-icon" href="user_request_view.html">
-                    <i id="user-eyes" class="fas fa-eye"></i>
-                </a>
-            </h3> -->
             <br>
             <h3 id="quoteTitle">Make new request</h3>
             <div class="userform">
                 <div>
-                    <!-- <label class="form-labels">Equipment</label> -->
+                    <br>
+                    <select id="requestType">
+                        <option>Select Request</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="repair">Repair</option>
+                    </select>
+                </div>
+                <div>
                     <br>
                     <input type="text" id="equipment" placeholder="equipment">
                 </div>
                 <div>
-                    <!-- <label class="form-labels">Equipment Model</label> -->
                     <br>
                     <input type="text" id="model" placeholder="model">
                 </div>
                 <div>
-                    <!-- <label class="form-labels">Request Description</label> -->
                     <br>
                     <textarea id="message" placeholder="Message"></textarea>
                 </div>
-                <button class="buttonSubmit" id="requestSubmit">Submit Request</button>
+                <button id="requestSubmit">Submit Request</button>
             </div>
         </div>
-    </aside>
+    </section>
 
     <footer>
         <p>Maintenance Tracker, Copyright &copy; 2018</p>
