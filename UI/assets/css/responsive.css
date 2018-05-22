@@ -93,9 +93,9 @@
         font-size: 18px;
     }
 
-    #buttonSubmit , #signupSubmit, #requestSubmit {
+    #buttonSubmit , #signupSubmit, #requestSubmit , #newRequest{
         width: 45%;
-        background:  #f44336;
+        background:  #ba7e0f;
         color: #ffffff;
         padding: 14px 40px;
         border-radius: 10px;
