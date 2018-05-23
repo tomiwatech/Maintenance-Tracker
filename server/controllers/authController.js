@@ -67,7 +67,7 @@ class authController {
             if (response) {
               resolve('Password Matched');
             } else {
-              reject('Password not matched');
+              reject(new Error('Password not matched'));
             }
           });
         });
