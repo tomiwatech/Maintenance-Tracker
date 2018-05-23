@@ -336,7 +336,7 @@ tr:hover {
 }
 
 .button2 {
-  background-color: #ba7e0f;
+  background-color: rgb(238, 104, 104);
 }
 
 .button3 {
@@ -391,3 +391,15 @@ tr:hover {
 textarea {
   resize: none;
 }
+
+.flex-user-container > div {
+  background-color: #ba7e0f;
+  width: 100%;
+  height: 240px;
+  color: white;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+
