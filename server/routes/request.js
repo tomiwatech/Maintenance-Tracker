@@ -9,7 +9,6 @@ router.get('/requests', requestMiddleware.verifyToken, requestController.getAll)
 router.get('/requests/:id', requestMiddleware.verifyToken, requestController.findOne);
 router.put('/requests/:id', requestMiddleware.verifyToken, requestMiddleware.validatePostBody, requestController.updateOne);
 router.delete('/requests/:id', requestMiddleware.verifyToken, requestController.deleteOne);
-// router.get('/request/clear', requestMiddleware.verifyToken, requestController.deleteAll);
 
 
 export default router;

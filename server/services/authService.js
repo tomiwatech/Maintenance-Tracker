@@ -126,7 +126,7 @@ class authService {
     return promise;
   }
   /**
-   * save new user 
+   * save new user
    * @staticmethod
    * @param  {string} body - Request object
    * @return {string} res
