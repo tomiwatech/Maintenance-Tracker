@@ -149,7 +149,7 @@ class requestService {
   /**
    * Get all requests
    * @staticmethod
-   * @param  {string} id - Request object
+   * @param  {string} id
    * @return {string} res
    */
   static getAllRequests() {
