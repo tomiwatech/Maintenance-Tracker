@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import config from '../../config/index';
 /**
  * @exports
  * @class requestMiddleware
@@ -41,9 +42,9 @@ class requestMiddleware {
     // decode token
     if (token) {
       // verifies secret and checks exp
-      jwt.verify(token, 'user', (err, decoded) => {
+      jwt.verify(token, config.userSecret, (err, decoded) => {
         if (err) {
-          return res.json({ status: false, message: 'Failed to authenticate token.' });
+          return res.status(400).json({ verifyToken: false, message: 'Failed to authenticate token.' });
         }
         // if everything is good, save to request for use in other routes
         req.decoded = decoded;
@@ -53,7 +54,7 @@ class requestMiddleware {
       // if there is no token
       // return an error
       return res.status(403).send({
-        status: false,
+        verifyToken: false,
         message: 'No token provided.',
       });
     }

@@ -16,13 +16,11 @@ class adminController {
     const { id } = req.params;
     adminService.approveById(id).then((response) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Request Approved',
+        message: 'Request Approved',
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Request could not be approved',
+        message: 'Request could not be approved',
       });
     });
   }
@@ -36,17 +34,12 @@ class adminController {
   static disapproveOne(req, res) {
     const { id } = req.params;
     adminService.disapproveById(id).then((response) => {
-      console.log('id', id);
-      console.log(response);
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Request Disapproved',
+        message: 'Request Disapproved',
       });
     }).catch((err) => {
-      console.log('Unable to resolve request');
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Unable to Disapprove Request',
+        message: 'Unable to Disapprove Request',
       });
     });
   }
@@ -61,13 +54,11 @@ class adminController {
     const { id } = req.params;
     adminService.resolveById(id).then((response) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Request Resolved',
+        message: 'Request Resolved',
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Unable to Reslove Request',
+        message: 'Unable to Reslove Request',
       });
     });
   }
@@ -82,15 +73,13 @@ class adminController {
   static getAll(req, res) {
     adminService.getAllRequests().then((result) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Successfully fetched all users requests',
+        message: 'Successfully fetched all users requests',
         total: result.rowCount,
         data: result.rows,
       });
     }).catch((e) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Could not fetch all users',
+        message: 'Could not fetch all users',
       });
     });
   }

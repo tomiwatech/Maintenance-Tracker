@@ -26,19 +26,16 @@ class requestController {
       req.body.resolvve = false;
       requestService.saveRequest(req.body).then((resulter) => {
         return res.status(201).json({
-          responseCode: '00',
-          responseMessage: 'New Request created successfully',
+          message: 'New Request created successfully',
         });
       }).then((err) => {
         return res.status(500).json({
-          responseCode: '01',
-          responseMessage: 'Error Saving Request',
+          message: 'Error Saving Request',
         });
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Request Already Exists',
+        message: 'Request Already Exists',
       });
     });
   }
@@ -53,14 +50,12 @@ class requestController {
     const { id } = req.params;
     requestService.findRequestById(id).then((response) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Request Found',
+        message: 'Request Found',
         data: response.rows,
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Request Not found',
+        message: 'Request Not found',
       });
     });
   }
@@ -75,13 +70,11 @@ class requestController {
     const { id } = req.params;
     requestService.deleteRequestById(id).then((response) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Request Deleted',
+        message: 'Request Deleted',
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Error Deleting Request',
+        message: 'Error Deleting Request',
       });
     });
   }
@@ -95,14 +88,12 @@ class requestController {
   static updateOne(req, res) {
     requestService.updateRequestById(req.body).then((response) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Request Updated',
+        message: 'Request Updated',
         data: response.rows,
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Error Updating Request',
+        message: 'Error Updating Request',
       });
     });
   }
@@ -117,15 +108,13 @@ class requestController {
   static getAll(req, res) {
     requestService.getAllRequests().then((result) => {
       return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Successfully fetched all users requests',
+        message: 'Successfully fetched all users requests',
         total: result.rowCount,
         data: result.rows,
       });
     }).catch((e) => {
       return res.status(400).json({
-        responseCode: '00',
-        responseMessage: 'Could not fetch all users',
+        message: 'Could not fetch all users',
       });
     });
   }

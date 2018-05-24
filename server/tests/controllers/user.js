@@ -13,7 +13,7 @@ describe('Users Controller', () => {
     describe('/GET REQUEST', () => {
         it('it should GET all users requests', function (done) {
             chai.request(server)
-                .get('/api/v1/users/dummy/requests/')
+                .get('/api/v1/users/requests/')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('responseMessage').to.equals('Successfully fetched all users requests');
@@ -25,7 +25,7 @@ describe('Users Controller', () => {
 
         it('it should GET user request by id specified', (done) => {
             chai.request(server)
-                .get('/api/v1/users/dummy/requests/1')
+                .get('/api/v1/users/requests/1')
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('responseMessage').to.equals('Request found');
@@ -38,7 +38,7 @@ describe('Users Controller', () => {
         it('it should not GET user request because id is not found', function (done) {
             let requestId = 7;
             chai.request(server)
-                .get(`/api/v1/users/dummy/requests/${requestId}`)
+                .get(`/api/v1/users/requests/${requestId}`)
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({
@@ -56,7 +56,7 @@ describe('Users Controller', () => {
     describe('/POST REQUEST', () => {
         it('it should make a post request if all fields are not empty ', (done) => {
             chai.request(server)
-                .post('/api/v1/users/dummy/requests/')
+                .post('/api/v1/users/requests/')
                 .send({
                     name: "finallize",
                     model: "hh",
@@ -85,7 +85,7 @@ describe('Users Controller', () => {
             }
 
             chai.request(server)
-                .post('/api/v1/users/dummy/requests/')
+                .post('/api/v1/users/requests/')
                 .send(body)
                 .end((err, res) => {
                     res.should.have.status(400);
@@ -107,7 +107,7 @@ describe('Users Controller', () => {
             data.defect = 'broken';
 
             chai.request(server)
-                .post('/api/v1/users/dummy/requests/')
+                .post('/api/v1/users/requests/')
                 .send(data)
                 .end((err, res) => {
                     res.should.have.status(400);
@@ -136,7 +136,7 @@ describe('Users Controller', () => {
             }
 
             chai.request(server)
-                .put('/api/v1/users/dummy/requests/update')
+                .put('/api/v1/users/requests/update')
                 .send(request)
                 .end((err, res) => {
                     res.should.have.status(200);
@@ -165,7 +165,7 @@ describe('Users Controller', () => {
             request.defect = '';
 
             chai.request(server)
-                .put('/api/v1/users/dummy/requests/update')
+                .put('/api/v1/users/requests/update')
                 .send(request)
                 .end((err, res) => {
                     res.should.have.status(400);
@@ -179,7 +179,7 @@ describe('Users Controller', () => {
 
         it('it should not update the request if request does not exist in db in the first place ', (done) => {
             chai.request(server)
-                .put('/api/v1/users/dummy/requests/update')
+                .put('/api/v1/users/requests/update')
                 .send({
                     name: "finallize",
                     model: "hh",
@@ -207,7 +207,7 @@ describe('Users Controller', () => {
         it('it should delete user request by id specified', (done) => {
             let request = 3;
             chai.request(server)
-                .delete(`/api/v1/users/dummy/requests/${request}`)
+                .delete(`/api/v1/users/requests/${request}`)
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('responseMessage').to.equals('Request Deleted');
@@ -219,7 +219,7 @@ describe('Users Controller', () => {
 
         it('it should not delete user request because id is not found', (done) => {
             chai.request(server)
-                .delete('/api/v1/users/dummy/requests/100')
+                .delete('/api/v1/users/requests/100')
                 .end((err, res) => {
                     res.should.have.status(400);
                     res.body.should.be.deep.equal({

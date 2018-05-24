@@ -4,6 +4,7 @@ import moment from 'moment';
 import authService from '../services/authService';
 import db from '../connection/connect';
 import passwd from '../helpers/compare-password';
+import config from '../config/index';
 
 /**
  * @exports
@@ -28,19 +29,16 @@ class authController {
       req.body.now = now;
       authService.saveUser(req.body).then((resulter) => {
         return res.status(201).json({
-          responseCode: '00',
-          responseMessage: 'New User created successfully',
+          message: 'New User created successfully',
         });
       }).then((err) => {
         return res.status(500).json({
-          responseCode: '01',
-          responseMessage: 'Error Saving User',
+          message: 'Error Saving User',
         });
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'User Already Exists',
+        message: 'User Already Exists',
       });
     });
   }
@@ -55,25 +53,22 @@ class authController {
     const { username, password } = req.body;
     authService.findUserByUsername(username, 'user').then((user) => {
       passwd.compare(password, user.password).then((response) => {
-        const token = jwt.sign({ data: user }, 'user', {
+        const token = jwt.sign({ data: user }, config.userSecret, {
           expiresIn: 86400, // expires in 24 hours
         });
         return res.status(200).json({
-          responseCode: '00',
-          responseMessage: 'Authentication Successful',
+          message: 'Authentication Successful',
           data: user.data,
           token,
         });
       }).catch((err) => {
         return res.status(400).json({
-          responseCode: '01',
-          responseMessage: 'Please Check Username and Password',
+          message: 'Please Check Username and Password',
         });
       });
     }).catch((error) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Please Check Username and Password',
+        message: 'Please Check Username and Password',
       });
     });
   }
@@ -95,19 +90,16 @@ class authController {
       req.body.now = now;
       authService.saveUser(req.body).then((resulter) => {
         return res.status(201).json({
-          responseCode: '00',
-          responseMessage: 'New Admin created successfully',
+          message: 'New Admin created successfully',
         });
       }).then((err) => {
         return res.status(500).json({
-          responseCode: '01',
-          responseMessage: 'Error saving Admin',
+          message: 'Error saving Admin',
         });
       });
     }).catch((err) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Admin Already Exists',
+        message: 'Admin Already Exists',
       });
     });
   }
@@ -122,25 +114,22 @@ class authController {
     const { username, password } = req.body;
     authService.findAdminByUsername(username, 'admin').then((user) => {
       passwd.compare(password, user.password).then((response) => {
-        const token = jwt.sign({ data: user }, 'admin', {
+        const token = jwt.sign({ data: user }, config.adminSecret, {
           expiresIn: 86400, // expires in 24 hours
         });
         return res.status(200).json({
-          responseCode: '00',
-          responseMessage: 'Authentication Successful',
+          message: 'Authentication Successful',
           data: user.data,
           token,
         });
       }).catch((err) => {
         return res.status(400).json({
-          responseCode: '01',
-          responseMessage: 'Please Check Username and Password',
+          message: 'Please Check Username and Password',
         });
       });
     }).catch((error) => {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Please Check Username and Password',
+        message: 'Please Check Username and Password',
       });
     });
   }

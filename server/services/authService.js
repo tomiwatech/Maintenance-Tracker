@@ -54,7 +54,7 @@ class authService {
         } else if (result.rowCount >= 1) {
           obj.rowCount = result.rowCount;
           obj.rows = result.rows;
-          resolve(obj);
+          reject(obj);
         }
       }).catch((e) => {
         err.rowCount = 0;
