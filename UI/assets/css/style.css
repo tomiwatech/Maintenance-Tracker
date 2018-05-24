@@ -30,14 +30,14 @@ ul {
   padding: 0;
 }
 
-#buttonSubmit , #signupSubmit, #requestSubmit {
+#buttonSubmit , #signupSubmit, #requestSubmit , #newRequest{
   width: 100%;
-  background: #f44336;
+  background: #ba7e0f;
   color: #ffffff;
   padding: 14px 40px;
   font-size: 18px;
   margin-top: 20px;
-  border: 2px solid #f44336;
+  border: 2px solid #ba7e0f;
 }
 
 .viewBtn {
@@ -47,18 +47,18 @@ ul {
   position: relative;
   top: 50%;
   left: 50%;
-  background: #f44336;
+  background: #ba7e0f;
 }
 
 .landingBtn {
   width: 30%;
-  background: #f44336;
+  background: #ba7e0f;
   color: #ffffff;
   padding: 14px 40px;
   border-radius: 20px;
   font-size: 18px;
   margin-top: 20px;
-  border: 2px solid #f44336;
+  border: 2px solid #ba7e0f;
 }
 
 .landingBtn:hover {
@@ -71,7 +71,7 @@ ul {
 
 .viewSubmit {
   width: 28%;
-  background: #f44336;
+  background: #ba7e0f;
   color: #ffffff;
   /* padding: 3px 17px; */
   border-radius: 10px;
@@ -126,7 +126,7 @@ ul {
   color: #ffffff;
   margin-top: 0px;
   margin-bottom: 0px;
-  border-top:3px solid #f44336 ;
+  border-top:3px solid #ba7e0f ;
   height: 740px;
 }
 
@@ -137,7 +137,7 @@ header {
   color: #ffffff;
   padding-top: 30px;
   min-height: 70px;
-  border-bottom: #f44336 3px solid;
+  border-bottom: #ba7e0f 3px solid;
 }
 
 header a {
@@ -165,9 +165,13 @@ header nav {
 }
 
 header #highlight,
-header .current a {
-  color: #f44336;
+nav .current {
+  color: #ba7e0f;
   font-weight: bold;
+}
+
+nav .display {
+ display: none
 }
 
 header #trackerText {
@@ -175,7 +179,7 @@ header #trackerText {
 }
 
 header #highlighter {
-  color: #f44336;
+  color: #ba7e0f;
   font-weight: bold;
   font-size: 30px;
 }
@@ -277,7 +281,7 @@ footer {
   margin-top: -3em;
   padding: 1px;
   color: #ffffff;
-  background-color: #f44336;
+  background-color: #ba7e0f;
   text-align: center;
 }
 
@@ -293,12 +297,11 @@ th,
 td {
   padding: 8px;
   text-align: left;
-  border-bottom: 2px solid #f44336;
+  border-bottom: 2px solid #ba7e0f;
 }
 
 tr:hover {
-  background-color: #f44336;
-  cursor: pointer;
+  background-color: #ba7e0f;
 }
 
 .eye-icon i {
@@ -310,7 +313,7 @@ tr:hover {
 
 .eye-icon a:hover {
   text-decoration: none;
-  background: #f44336;
+  background: #ba7e0f;
   cursor: pointer;
 }
 
@@ -327,17 +330,17 @@ tr:hover {
 }
 
 .button:hover {
-  background: #f44336;
+  background: #ba7e0f;
   color: white;
   cursor: pointer;
 }
 
 .button2 {
-  background-color: #f44336;
+  background-color: rgb(238, 104, 104);
 }
 
 .button3 {
-  background-color: darkorange;
+  background-color: dark#ba7e0f;
 }
 
 .flex-container {
@@ -347,7 +350,7 @@ tr:hover {
 }
 
 .flex-container > div {
-  background-color: #f44336;
+  background-color: #ba7e0f;
   width: 420px;
   height: 250px;
   margin: 15px;
@@ -356,3 +359,47 @@ tr:hover {
   line-height: 75px;
   font-size: 30px;
 }
+
+.signup-link a{
+  text-decoration:none;color:#ba7e0f;
+  text-align: center
+}
+
+.signup-link p{
+  text-align: center
+}
+
+#border-box{
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid#878b87;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+#pending{
+  background: lightblue;
+  color: black;
+  padding: 5px;
+}
+
+.status-color{
+  color: #ba7e0f;
+}
+
+textarea {
+  resize: none;
+}
+
+.flex-user-container > div {
+  background-color: #ba7e0f;
+  width: 100%;
+  height: 240px;
+  color: white;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+

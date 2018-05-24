@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
+// Remember to set this in your enviroment variables later
+// app.set('superSecret', 'helloword');
 // api versioning;
 app.use('/api/v1', api);
 app.get('/', (req, res) => res.send({ ok: true, message: 'Welcome to Maintenance Tracker', baseurl: '/api/v1' }).status(200));

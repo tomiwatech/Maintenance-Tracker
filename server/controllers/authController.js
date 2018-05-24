@@ -1,6 +1,9 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import moment from 'moment';
 import authService from '../services/authService';
 import db from '../connection/connect';
+import passwd from '../helpers/compare-password';
 
 /**
  * @exports
@@ -8,32 +11,33 @@ import db from '../connection/connect';
  */
 class authController {
   /**
-   * Creates a new request
+   * Creates a new new
    * @staticmethod
    * @param  {object} req - Request object
    * @param {object} res - Response object
    * @return {json} res.json
    */
-  static signup(req, res) {
+  static userSignup(req, res) {
     const {
       email,
     } = req.body;
-    authService.findByEmail(email).then((response) => {
+    authService.findUserByEmail(email).then((response) => {
+      const d = new Date();
+      const now = moment(d).format('YYYY-MM-DD HH:mm:ss');
+      req.body.role = 'user';
+      req.body.now = now;
       authService.saveUser(req.body).then((resulter) => {
-        console.log('Saved');
         return res.status(201).json({
           responseCode: '00',
           responseMessage: 'New User created successfully',
         });
       }).then((err) => {
-        console.log('Error Saving User');
-        return res.status(400).json({
+        return res.status(500).json({
           responseCode: '01',
           responseMessage: 'Error Saving User',
         });
       });
     }).catch((err) => {
-      console.log('User Already Exists');
       return res.status(400).json({
         responseCode: '01',
         responseMessage: 'User Already Exists',
@@ -41,82 +45,102 @@ class authController {
     });
   }
   /**
-   * Creates a new request
+   * Login User
    * @staticmethod
    * @param  {object} req - Request object
    * @param {object} res - Response object
    * @return {json} res.json
    */
-  static login(req, res) {
+  static userLogin(req, res) {
     const { username, password } = req.body;
-    authService.findByUsername(username).then((result) => {
-      console.log('result', result);
-      console.log(result.password);
-      /**
-   * Creates a new request
-   * @staticmethod
-   * @param  {object} req - Request object
-   * @param {object} res - Response object
-   * @return {json} res.json
-   */
-      function compareWithBcrypt() {
-        const promise = new Promise((resolve, reject) => {
-          // Load hash from your password DB.
-          bcrypt.compare(password, result.password).then((response) => {
-          // res == true
-            if (response) {
-              resolve('Password Matched');
-            } else {
-              reject(new Error('Password not matched'));
-            }
-          });
+    authService.findUserByUsername(username, 'user').then((user) => {
+      passwd.compare(password, user.password).then((response) => {
+        const token = jwt.sign({ data: user }, 'user', {
+          expiresIn: 86400, // expires in 24 hours
         });
-        return promise;
-      }
-      compareWithBcrypt().then((response) => {
-        console.log('password match');
         return res.status(200).json({
           responseCode: '00',
-          responseMessage: 'Password Match',
+          responseMessage: 'Authentication Successful',
+          data: user.data,
+          token,
         });
       }).catch((err) => {
-        console.log('password not matched');
         return res.status(400).json({
           responseCode: '01',
           responseMessage: 'Please Check Username and Password',
         });
       });
     }).catch((error) => {
-      console.log('User not found');
       return res.status(400).json({
         responseCode: '01',
         responseMessage: 'Please Check Username and Password',
       });
     });
   }
-
   /**
-   * Get all requests
-   *
+   * Creates a new admin
    * @staticmethod
    * @param  {object} req - Request object
    * @param {object} res - Response object
    * @return {json} res.json
    */
-  static getAll(req, res) {
-    db.query('SELECT * from users').then((result) => {
-      console.log(result.rowCount);
-      return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Successfully fetched all users requests',
-        total: result.rowCount,
-        data: result.rows,
+  static adminSignup(req, res) {
+    const {
+      email,
+    } = req.body;
+    authService.findAdminByEmail(email).then((response) => {
+      const d = new Date();
+      const now = moment(d).format('YYYY-MM-DD HH:mm:ss');
+      req.body.role = 'admin';
+      req.body.now = now;
+      authService.saveUser(req.body).then((resulter) => {
+        return res.status(201).json({
+          responseCode: '00',
+          responseMessage: 'New Admin created successfully',
+        });
+      }).then((err) => {
+        return res.status(500).json({
+          responseCode: '01',
+          responseMessage: 'Error saving Admin',
+        });
       });
-    }).catch((e) => {
-      console.log(e);
-      return res.status(200).json({
-        responseCode: '00',
-        responseMessage: 'Could not fetch all users',
+    }).catch((err) => {
+      return res.status(400).json({
+        responseCode: '01',
+        responseMessage: 'Admin Already Exists',
+      });
+    });
+  }
+  /**
+   * Login Admin
+   * @staticmethod
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} res.json
+   */
+  static adminLogin(req, res) {
+    const { username, password } = req.body;
+    authService.findAdminByUsername(username, 'admin').then((user) => {
+      passwd.compare(password, user.password).then((response) => {
+        const token = jwt.sign({ data: user }, 'admin', {
+          expiresIn: 86400, // expires in 24 hours
+        });
+        return res.status(200).json({
+          responseCode: '00',
+          responseMessage: 'Authentication Successful',
+          data: user.data,
+          token,
+        });
+      }).catch((err) => {
+        return res.status(400).json({
+          responseCode: '01',
+          responseMessage: 'Please Check Username and Password',
+        });
+      });
+    }).catch((error) => {
+      return res.status(400).json({
+        responseCode: '01',
+        responseMessage: 'Please Check Username and Password',
       });
     });
   }

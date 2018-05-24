@@ -1,42 +1,12 @@
-const clearFields = params => {
-  switch (params) {
-    case "login":
-      document.getElementById("username").value = "";
-      document.getElementById("password").value = "";
-      break;
-    case "signup":
-      document.getElementById("username").value = "";
-      document.getElementById("password").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("fullname").value = "";
-      break;
-    case "request":
-      document.getElementById("equipment").value = "";
-      document.getElementById("model").value = "";
-      document.getElementById("message").value = "";
-      document.getElementById('requestType').selectedIndex = 0;
-      break;
-    default:
-      console.log("Enjoy your day mr default");
-      break;
-  }
-};
+
 
 /*****************************************************************
                   VALIDATION FOR LOGIN
 ******************************************************************/
 
 const validateLogin = () => {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
 
-  if (!username || !password) {
-    swal("Oops!", "Please Fill all fields", "error");
-    clearFields("login");
-    return;
-  }
-
-  location.href = "user_page.html";
+  location.href = "user_request_view.html";
 };
 
 let login = document.getElementById("buttonSubmit");
@@ -52,18 +22,8 @@ if (login) login.addEventListener("click", validateLogin);
 
 const validateSignup = () => {
   console.log("hello");
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  let email = document.getElementById("email").value;
-  let fullname = document.getElementById("fullname").value;
 
-  if (!username || !password || !fullname || !email) {
-    swal("Oops!", "Please Fill all fields", "error");
-    clearFields("signup");
-    return;
-  }
-
-  location.href = "user_page.html";
+  location.href = "user_request_view.html";
 };
 
 let signup = document.getElementById("signupSubmit");
@@ -79,17 +39,6 @@ if (signup) signup.addEventListener("click", validateSignup);
 ******************************************************************/
 
 const validateRequest = () => {
-  console.log("hello");
-  let equipment = document.getElementById("equipment").value;
-  let model = document.getElementById("model").value;
-  let message = document.getElementById("message").value;
-  let request = document.getElementById('requestType');
-
-  if (!equipment || !model || !message || request.selectedIndex == 0) {
-    swal("Oops!", "Please Fill all fields", "error");
-    clearFields("request");
-    return;
-  }
 
   location.href = "user_request_view.html";
 };
@@ -103,33 +52,13 @@ if (request) request.addEventListener("click", validateRequest);
 ******************************************************************/
 
 /*****************************************************************
-                SWEETALERTS FOR ADMIN DETAILS BUTTONS
+                NEW REQUESTS
 ******************************************************************/
-
-const resolveRequest = evt => {
-  console.log(evt.target.params);
-  switch (evt.target.params) {
-    case "resolve":
-      swal("Dear User", "Your request has been resolved", "success");
-      break;
-    case "approve":
-      swal("Dear User!", "Your request has been approved", "success");
-      break;
-    case "reject":
-      swal("Oops!", "You request has been rejected", "error");
-      break;
-    case "status":
-      swal("Dear User!", "You request is been processed", "info");
-      break;
-    default:
-      console.log("ENjoy");
-      break;
-  }
+const newRequestt = () => {
+ console.log('hello')
+  location.href = "user_page.html";
 };
 
-let resolveBtn = document.getElementById("resolve");
-let approveBtn = document.getElementById("approve");
-let rejectBtn = document.getElementById("reject");
-if (resolveBtn) resolveBtn.addEventListener("click", resolveRequest); resolveBtn.params = "resolve";
-if (approveBtn) approveBtn.addEventListener("click", resolveRequest);approveBtn.params = "approve";
-if (rejectBtn) rejectBtn.addEventListener("click", resolveRequest); rejectBtn.params = "reject";
+let newRequest = document.getElementById("newRequest");
+
+if (newRequest) newRequest.addEventListener("click", newRequestt);

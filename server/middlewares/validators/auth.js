@@ -5,7 +5,7 @@
 class authMiddleware {
 /**
  * authMiddleware
- *
+ * validate signup
  * @staticmethod
  * @param  {object} req - Request object
  * @param {object} res - Response object
@@ -14,9 +14,9 @@ class authMiddleware {
  */
   static validateSignup(req, res, next) {
     const {
-      username, password, email, fullname, createdOn,
+      username, password, email, fullname,
     } = req.body;
-    if (username.trim() === '' || password.trim() === '' || email.trim() === '' || fullname.trim() === '' || createdOn.trim() === '') {
+    if (username.trim() === '' || password.trim() === '' || email.trim() === '' || fullname.trim() === '') {
       return res.status(400).json({
         responseCode: '01',
         responseMessage: 'Please fill all fields',
@@ -26,7 +26,7 @@ class authMiddleware {
   }
   /**
  *authMiddleware
- *
+ * Validate login
  * @staticmethod
  * @param  {object} req - Request object
  * @param {object} res - Response object
