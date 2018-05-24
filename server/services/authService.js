@@ -74,7 +74,7 @@ class authService {
    */
   static findUserByUsername(username, role) {
     const promise = new Promise((resolve, reject) => {
-      const query = `SELECT username, password, email, fullname FROM users WHERE username = '${username}' AND role = '${role}'`;
+      const query = `SELECT id, username, password, email, fullname FROM users WHERE username = '${username}' AND role = '${role}'`;
       db.query(query).then((result) => {
         if (result.rowCount === 0) {
           err.rowCount = 0;

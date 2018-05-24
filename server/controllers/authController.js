@@ -52,8 +52,9 @@ class authController {
   static userLogin(req, res) {
     const { username, password } = req.body;
     authService.findUserByUsername(username, 'user').then((user) => {
+      console.log(user.data[0].id);
       passwd.compare(password, user.password).then((response) => {
-        const token = jwt.sign({ data: user }, config.userSecret, {
+        const token = jwt.sign({ data: user.data[0].id }, config.userSecret, {
           expiresIn: 86400, // expires in 24 hours
         });
         return res.status(200).json({

@@ -15,15 +15,16 @@ class requestController {
    */
   static create(req, res) {
     const {
-      equipment,
+      equipment, serial_number,
     } = req.body;
-    requestService.findRequestByEquipment(equipment).then((response) => {
+    requestService.findRequestBySerial(serial_number).then((response) => {
       const d = new Date();
       const now = moment(d).format('YYYY-MM-DD HH:mm:ss');
       req.body.now = now;
-      req.body.approve = 'pending';
-      req.body.disapprove = false;
-      req.body.resolvve = false;
+      req.body.status = 'pending';
+      req.body.user_id = req.decoded.data;
+      req.body.serial_number = serial_number;
+      console.log(req.decoded.data);
       requestService.saveRequest(req.body).then((resulter) => {
         return res.status(201).json({
           message: 'New Request created successfully',
@@ -106,6 +107,7 @@ class requestController {
    * @return {json} res.json
    */
   static getAll(req, res) {
+    console.log(req.decoded.data);
     requestService.getAllRequests().then((result) => {
       return res.status(200).json({
         message: 'Successfully fetched all users requests',

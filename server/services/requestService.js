@@ -10,13 +10,14 @@ class requestService {
   /**
    * Find request by equipment
    * @staticmethod
-   * @param  {string} equipment - Request object
+   * @param  {string} serial_number - Request object
    * @return {string} res
    */
-  static findRequestByEquipment(equipment) {
+  static findRequestBySerial(serial_number) {
     const promise = new Promise((resolve, reject) => {
-      const query = `SELECT requesttype, equipment, model, approve, disapprove, resolve FROM requests WHERE equipment = '${equipment}'`;
+      const query = `SELECT requesttype, equipment, model, status, user_id FROM requests WHERE serial_number = '${serial_number}'`;
       db.query(query).then((result) => {
+        // console.log(result);
         if (result.rowCount === 0) {
           err.rowCount = 0;
           err.rows = [];
@@ -27,6 +28,7 @@ class requestService {
           reject(obj);
         }
       }).catch((e) => {
+        // console.log(e);
         err.rowCount = 0;
         err.rows = [];
         reject(err);
@@ -130,10 +132,10 @@ class requestService {
    */
   static saveRequest(body) {
     const {
-      requesttype, equipment, model, description, now, approve, disapprove, resolvve,
+      requesttype, equipment, model, description, now, status, user_id, serial_number,
     } = body;
     const promise = new Promise((resolve, reject) => {
-      const queryBody = `INSERT INTO requests (requesttype, equipment, model,description, created_on, approve, disapprove, resolve) VALUES ('${requesttype}', '${equipment}', '${model}', '${description}','${now}','${approve}','${disapprove}','${resolvve}')`;
+      const queryBody = `INSERT INTO requests (requesttype, equipment, model,description, created_on, status, user_id, serial_number) VALUES ('${requesttype}', '${equipment}', '${model}', '${description}','${now}','${status}','${user_id}','${serial_number}')`;
       db.query(queryBody).then((result) => {
         if (result.rowCount === 1) {
           resolve('Data Saved');
@@ -141,6 +143,7 @@ class requestService {
           reject(new Error('Not Saved'));
         }
       }).catch((e) => {
+        console.log(e);
         reject(new Error('Could not save Request'));
       });
     });
@@ -154,7 +157,7 @@ class requestService {
    */
   static getAllRequests() {
     const promise = new Promise((resolve, reject) => {
-      const query = 'SELECT * FROM requests';
+      const query = 'SELECT r.user_id,requesttype, equipment, model, description, status, serial_number FROM users u JOIN requests r ON u.id = r.user_id;';
       db.query(query).then((result) => {
         if (result.rowCount === 0) {
           err.rowCount = 0;

@@ -16,9 +16,9 @@ class requestMiddleware {
      */
   static validatePostBody(req, res, next) {
     const {
-      requesttype, equipment, model, description,
+      requesttype, equipment, model, description, serial_number,
     } = req.body;
-    if (requesttype.trim() === '' || model.trim() === '' || description.trim() === '' || equipment.trim() === '') {
+    if (serial_number.trim() === '' || requesttype.trim() === '' || model.trim() === '' || description.trim() === '' || equipment.trim() === '') {
       return res.status(400).json({
         responseCode: '01',
         responseMessage: 'Please fill all fields',

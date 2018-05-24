@@ -15,7 +15,7 @@ class adminService {
    */
   static approveById(id) {
     const promise = new Promise((resolve, reject) => {
-      const query = `UPDATE requests SET approve = 'true' WHERE id = '${id}'`;
+      const query = `UPDATE requests SET status = 'approved' WHERE id = '${id}' AND status = 'pending'`;
       db.query(query).then((result) => {
         if (result.rowCount === 0) {
           err.rowCount = 0;
@@ -43,7 +43,7 @@ class adminService {
    */
   static disapproveById(id) {
     const promise = new Promise((resolve, reject) => {
-      const query = `UPDATE requests SET disapprove = true WHERE id = '${id}'`;
+      const query = `UPDATE requests SET status = 'disapproved' WHERE id = '${id}' AND status = 'pending'`;
       db.query(query).then((result) => {
         if (result.rowCount === 0) {
           err.rowCount = 0;
@@ -71,7 +71,7 @@ class adminService {
    */
   static resolveById(id) {
     const promise = new Promise((resolve, reject) => {
-      const query = `UPDATE requests SET resolve = true WHERE id = '${id}'`;
+      const query = `UPDATE requests SET status = 'resolved' WHERE id = '${id}' AND status = 'approved'`;
       db.query(query).then((result) => {
         if (result.rowCount === 0) {
           err.rowCount = 0;
