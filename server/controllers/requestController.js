@@ -55,6 +55,7 @@ class requestController {
         data: response.rows,
       });
     }).catch((err) => {
+      console.log(err);
       return res.status(400).json({
         message: 'Request Not found',
       });
@@ -115,6 +116,7 @@ class requestController {
         data: result.rows,
       });
     }).catch((e) => {
+      console.log(e);
       return res.status(400).json({
         message: 'Could not fetch all users',
       });

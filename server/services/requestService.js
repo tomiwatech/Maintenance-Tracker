@@ -45,7 +45,7 @@ class requestService {
    */
   static findRequestById(id) {
     const promise = new Promise((resolve, reject) => {
-      const query = `SELECT requesttype, equipment, model,description, created_on, approve, disapprove, resolve FROM requests WHERE id = '${id}'`;
+      const query = `SELECT requesttype, equipment, model,description, created_on FROM requests WHERE id = '${id}'`;
       db.query(query).then((result) => {
         if (result.rowCount === 0) {
           err.rowCount = 0;
