@@ -20,8 +20,7 @@ class requestMiddleware {
     } = req.body;
     if (serial_number.trim() === '' || requesttype.trim() === '' || model.trim() === '' || description.trim() === '' || equipment.trim() === '') {
       return res.status(400).json({
-        responseCode: '01',
-        responseMessage: 'Please fill all fields',
+        message: 'Please fill all fields',
       });
     }
     next();

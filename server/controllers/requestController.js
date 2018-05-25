@@ -15,7 +15,7 @@ class requestController {
    */
   static create(req, res) {
     const {
-      equipment, serial_number,
+      serial_number,
     } = req.body;
     requestService.findRequestBySerial(serial_number).then((response) => {
       const d = new Date();
@@ -49,6 +49,7 @@ class requestController {
    */
   static findOne(req, res) {
     const { id } = req.params;
+    console.log(id);
     requestService.findRequestById(id).then((response) => {
       return res.status(200).json({
         message: 'Request Found',
