@@ -109,6 +109,4 @@ describe('Authentication Controller', () => {
 
     });
 
-    
-
 });
