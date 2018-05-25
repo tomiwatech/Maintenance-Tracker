@@ -3,13 +3,13 @@
  * @class UserhelperClass
  */
 class UserhelperClass {
-  /**
-   * Userhelper Class
-   * @staticmethod
-   * @param  {array} dataStore - Request object
-   * @param {number} id - Response object
-   * @return {number} a
-   */
+/**
+ * Userhelper Class
+ * @staticmethod
+ * @param  {array} dataStore
+ * @param {number} id
+ * @return {number} i
+ */
   static findRequest(dataStore, id) {
     for (let i = 0; i < dataStore.length; i += 1) {
       if (Number(dataStore[i].id) === Number(id)) {

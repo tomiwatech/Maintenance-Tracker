@@ -16,6 +16,7 @@
         "consistent-return": "off",
         "linebreak-style": "off",
         "no-param-reassign": 0,
+        "no-unused-vars": 1,
         "valid-jsdoc": [
             "error",
             {
@@ -33,6 +34,12 @@
                     "MethodDefinition": true,
                     "ClassDeclaration": true
                 }
+            }
+        ],
+        "prefer-promise-reject-errors": [
+            "error", 
+            {
+                "allowEmptyReject": true
             }
         ]
     }

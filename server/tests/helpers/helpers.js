@@ -1,5 +1,5 @@
 import chai from 'chai';
-import UserhelperClass from '../../helpers/users/user';
+import UserhelperClass from '../../helpers/userdummy';
 import dataStore from '../../dummy/dummy';
 
 let assert = chai.assert;

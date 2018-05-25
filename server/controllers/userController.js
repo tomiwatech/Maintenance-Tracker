@@ -1,4 +1,4 @@
-import UserhelperClass from '../helpers/users/user';
+import UserhelperClass from '../helpers/userdummy';
 import dataStore from '../dummy/dummy';
 /**
  * @exports

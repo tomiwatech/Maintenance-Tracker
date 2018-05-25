@@ -8,7 +8,8 @@
     <meta name="author" content="Sanni Michael Tomiwa">
     <title>Maintenance Tracker | User Details </title>
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
@@ -27,36 +28,22 @@
             </div>
             <nav>
                 <ul>
-                    <li class="current">
-                        <a href="index.html">Home</a>
-                    </li>
                     <li>
-                        <a href="login.html">Login</a>
-                    </li>
-                    <li>
-                        <a href="signup.html">Signup</a>
-                    </li>
-                    <li>
-                        <a href="user_page.html">User</a>
+                        <a class="current" href="user_request_view.html">User</a>
                     </li>
                     <li>
                         <a href="admin_page.html">Admin</a>
+                    </li>
+                    <li>
+                        <a href="login.html"> Logout</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="flex-container">
-        <div>1
-            <br>
-            <i class="fa fa-user fa-4x"></i>
-        </div>
+    <div class="flex-user-container">
         <div>8
-            <br>
-            <i class="fa fa-toolbox fa-4x"></i>
-        </div>
-        <div>3
             <br>
             <i class="fa fa-question-circle fa-4x"></i>
         </div>
@@ -158,6 +145,10 @@
                     </td>
                 </tr>
             </table>
+            <br>
+            <div class="userform">
+                <button id="newRequest">New Request</button>
+            </div>
         </div>
     </section>
 
